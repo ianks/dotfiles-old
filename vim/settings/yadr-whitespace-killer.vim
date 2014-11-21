@@ -1,15 +1,10 @@
-" via: http://rails-bestpractices.com/posts/60-remove-trailing-whitespace
-" Strip trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+function! TrimWhiteSpace()
+  %s/\s\+$//e
 endfunction
-command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
-nmap ,w :StripTrailingWhitespaces<CR>
+
+noremap <silent> <Leader>w :call TrimWhiteSpace()<CR>
+
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
