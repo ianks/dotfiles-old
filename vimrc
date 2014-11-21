@@ -71,7 +71,7 @@ filetype indent on
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-set nowrap       "Don't wrap lines
+set wrap         "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
@@ -92,6 +92,7 @@ set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
+set wildignore+=node_modules/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
