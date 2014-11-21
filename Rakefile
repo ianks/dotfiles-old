@@ -15,11 +15,12 @@ task :install => [:submodule_init, :submodules] do
 
   # this has all the runcoms from this directory.
   file_operation(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
-  file_operation(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
+  file_operation(Dir.glob('pry/*')) if want_to_install?('pry configs (more colorful)')
   file_operation(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')
   file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
+
   if want_to_install?('vim configuration (highly recommended)')
     file_operation(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
@@ -187,19 +188,9 @@ def install_fonts
 end
 
 def install_term_theme
-  puts "======================================================"
-  puts "Installing iTerm2 solarized theme."
-  puts "======================================================"
-  run %{ /usr/libexec/PlistBuddy -c "Add :'Custom Color Presets':'Solarized Light' dict" ~/Library/Preferences/com.googlecode.iterm2.plist }
-  run %{ /usr/libexec/PlistBuddy -c "Merge 'iTerm2/Solarized Light.itermcolors' :'Custom Color Presets':'Solarized Light'" ~/Library/Preferences/com.googlecode.iterm2.plist }
-  run %{ /usr/libexec/PlistBuddy -c "Add :'Custom Color Presets':'Solarized Dark' dict" ~/Library/Preferences/com.googlecode.iterm2.plist }
-  run %{ /usr/libexec/PlistBuddy -c "Merge 'iTerm2/Solarized Dark.itermcolors' :'Custom Color Presets':'Solarized Dark'" ~/Library/Preferences/com.googlecode.iterm2.plist }
-
-  # If iTerm2 is not installed or has never run, we can't autoinstall the profile since the plist is not there
   if !File.exists?(File.join(ENV['HOME'], '/Library/Preferences/com.googlecode.iterm2.plist'))
     puts "======================================================"
-    puts "To make sure your profile is using the solarized theme"
-    puts "Please check your settings under:"
+    puts "Please check your color settings in iTerm2 to make sure things are swell."
     puts "Preferences> Profiles> [your profile]> Colors> Load Preset.."
     puts "======================================================"
     return
@@ -215,7 +206,7 @@ def install_term_theme
 
   # Ask the user on which profile he wants to install the theme
   profiles = iTerm_profile_list
-  message = "I've found #{profiles.size} #{profiles.size>1 ? 'profiles': 'profile'} on your iTerm2 configuration, which one would you like to apply the Solarized theme to?"
+  message = "I've found #{profiles.size} #{profiles.size>1 ? 'profiles': 'profile'} on your iTerm2 configuration, which one would you like to apply the Jellybeans theme to?"
   profiles << 'All'
   selected = ask message, profiles
 
@@ -277,15 +268,13 @@ def install_prezto
     puts "Zsh is already configured as your shell of choice. Restart your session to load the new settings"
   else
     puts "Setting zsh as your default shell"
-    if File.exists?("/usr/local/bin/zsh")
-      if File.readlines("/private/etc/shells").grep("/usr/local/bin/zsh").empty?
-        puts "Adding zsh to standard shell list"
-        run %{ echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells }
-      end
-      run %{ chsh -s /usr/local/bin/zsh }
-    else
-      run %{ chsh -s /bin/zsh }
+
+    if File.readlines("/private/etc/shells").grep("/usr/local/bin/zsh").empty?
+      puts "Adding zsh to standard shell list"
+      run %{ echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells }
     end
+
+    run %{ chsh -s #{`which zsh`} }
   end
 end
 
