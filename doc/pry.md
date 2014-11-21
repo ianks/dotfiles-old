@@ -17,6 +17,6 @@ gem install jazz_hands
  * `clear` command to clear screen
  * `sql` command to execute something (within a rails console)
  * `c` (continue) `n` (next) `s` (step) commands for debugging using pry-nav
- * all objects displayed in readable format (colorized, sorted hash keys) - via awesome_print
+ * all objects displayed in readable format (colorized, sorted hash keys) - via pry-theme
  * a few color modifications to make it more useable
  * type `help` to see all the commands
