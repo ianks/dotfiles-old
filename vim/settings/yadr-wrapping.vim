@@ -17,4 +17,3 @@ nmap <D-k> gk
 nmap <D-$> g$
 nmap <D-^> g^
 nmap <D-0> g^
-
