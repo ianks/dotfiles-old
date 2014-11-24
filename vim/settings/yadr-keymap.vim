@@ -90,16 +90,6 @@ nmap <silent> ,qo :copen<CR>
 nnoremap <silent> ,z :bp<CR>
 nnoremap <silent> ,x :bn<CR>
 
-" ==============================
-" Window/Tab/Split Manipulation
-" ==============================
-" Move between split windows by using the four directions H, L, K, J
-" NOTE: This has moved to vim/settings/vim-tmux-navigator.vim.
-" nnoremap <silent> <C-h> <C-w>h
-" nnoremap <silent> <C-l> <C-w>l
-" nnoremap <silent> <C-k> <C-w>k
-" nnoremap <silent> <C-j> <C-w>j
-
 " Make gf (go to file) create the file, if not existent
 nnoremap gf :e<cfile><CR>
 nnoremap <C-w>f :sp +e<cfile><CR>
@@ -157,6 +147,3 @@ nmap sk :SplitjoinJoin<cr>
 
 " Get the current highlight group. Useful for then remapping the color
 map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
-
-" ,hp = html preview
-map <silent> ,hp :!open -a Safari %<CR><CR>
