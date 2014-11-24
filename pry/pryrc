@@ -11,9 +11,9 @@ Pry.commands.alias_command 'n', 'next' rescue nil
 Pry.prompt = [proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
 # === Listing config ===
-# Better colors - by default the headings for methods are too 
+# Better colors - by default the headings for methods are too
 # similar to method name colors leading to a "soup"
-# These colors are optimized for use with Solarized scheme 
+# These colors are optimized for use with Solarized scheme
 # for your terminal
 Pry.config.ls.separator = "\n" # new lines between methods
 
@@ -55,7 +55,7 @@ Pry.config.commands.import default_command_set
 begin
   require 'pry-theme'
   Pry.config.theme = 'zenburn'
-rescue
+rescue LoadError => err
   puts '$ gem install pry-theme  <-- Highly recommended.'
 end
 
