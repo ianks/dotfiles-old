@@ -139,6 +139,7 @@ alias ts='thin start'
 alias ms='mongrel_rails start'
 alias tfdl='tail -f log/development.log'
 alias tftl='tail -f log/test.log'
+alias be='bundle exec'
 
 alias ka9='killall -9'
 alias k9='kill -9'
@@ -188,8 +189,6 @@ alias dbmr='spring rake db:migrate:redo'
 alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
 
-# Homebrew
+# Packages
 alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
-
-# Simple server
-alias simplehttpserver='ruby -run -e httpd -- --port=8000 .'
+alias aptu='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove && sudo apt-get autoclean'
