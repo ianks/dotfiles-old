@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+if [ -f /opt/homebrew-cask/Caskroom/emacs/24.4/Emacs.app/Contents/MacOS/Emacs ]; then
+  which osascript > /dev/null 2>&1 && osascript -e 'tell application "Emacs" to activate'
+fi
+
+emacsclient -c "$@"

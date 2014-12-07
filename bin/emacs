@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+if [ -f /opt/homebrew-cask/Caskroom/emacs/24.4/Emacs.app/Contents/MacOS/Emacs ]; then
+  /opt/homebrew-cask/Caskroom/emacs/24.4/Emacs.app/Contents/MacOS/Emacs "$@"
+else
+  emacs "$@"
+fi
