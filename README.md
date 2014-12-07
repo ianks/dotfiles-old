@@ -1,4 +1,4 @@
-     _     _           _
+ _     _           _
     | |   | |         | |
     | |___| |_____  __| | ____
     |_____  (____ |/ _  |/ ___)
@@ -140,6 +140,7 @@ You can customize the configuration in `~/.tmux.conf.user`.
 
 The provided inputrc and editrc will turn your various command line tools like mysql and irb into vim prompts. There's
 also an included Ctrl-R reverse history search feature in editrc, very useful in irb, postgres command line, and etc.
+
 
 ### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
 
@@ -298,5 +299,13 @@ Pry offers a much better out of the box IRB experience with colors, tab completi
 as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
 
 [Learn more about YADR's pry customizations and how to install](doc/pry.md)
+
+
+### [Mjolnir](http://mjolnir.io/)
+
+Automate OSX tasks using Mjolnir. For example, `CMD ALT CTRL f` will open a
+Firefox window from anywhere in the OS. `CMD ALT CTRL h` will snap a window to
+the left side of the screen and you guessed it, `CMD ALT CTRL l` will snap it to
+the right.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/skwp/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
