@@ -14,6 +14,7 @@ local appfinder = require "mjolnir.cmsj.appfinder"
 
 local definitions = {}
 local hyper = {}
+auxWin = nil
 
 local grab_closest_window = function()
   local windows = window.visiblewindows()
@@ -27,16 +28,28 @@ local grab_closest_window = function()
   end
 end
 
-local minimize_window = function()
+local maximize_window = function()
   return function()
     local win = window.focusedwindow()
 
     if win then
-      window.minimize(win)
-      -- application.launchforfocus(grab_closest_window())
+      save_focus()
+      window.maximize(win)
     else
-      alert.show("No focused window.")
-      return false
+      focus_saved()
+    end
+  end
+end
+
+local focusify = function()
+  return function()
+    local win = window.focusedwindow()
+
+    if win then
+      save_focus()
+      window.minimize(win)
+    else
+      focus_saved()
     end
   end
 end
@@ -53,15 +66,21 @@ local gridset = function(frame)
   end
 end
 
-auxWin = nil
 function save_focus()
   auxWin = window.focusedwindow()
-  alert.show("Window '" .. auxWin:title() .. "' saved.")
 end
 
 function focus_saved()
   if auxWin then
-    auxWin:focus()
+    if window.focusedwindow() == auxWin then
+      auxWin:minimize()
+    else
+      if auxWin:isminimized() then
+        auxWin:unminimize()
+      end
+
+      auxWin:focus()
+    end
   end
 end
 
@@ -132,39 +151,28 @@ local goright = {x = gw/2, y = 0, w = gw/2, h = gh}
 local gobig = {x = 0, y = 0, w = gw, h = gh}
 
 local full_apps = {
-  "Safari",
-  "Xcode",
-  "Google Chrome",
-  "iTunes",
   "Emacs",
   "Dropbox",
   "Mailbox",
-  "uTorrent",
-  "VMware Fusion",
-  "Firefox"
+  "FirefoxDeveloperEdition"
 }
 
 local layout2 = {
-  Airmail = {1, gomiddle},
-  Spotify = {1, gomiddle},
-  Calendar = {1, gomiddle},
   Dash = {1, gomiddle},
-  iTerm = {2, goright},
-  MacRanger = {2, goleft},
+  iTerm = {2, goleft},
+  FirefoxDeveloperEdition = {2, goright}
 }
 
 fnutils.each(full_apps, function(app) layout2[app] = {1, gobig} end)
 
 definitions = {
-  [";"] = save_focus,
-  a = focus_saved,
+  a = save_focus,
+  [";"] = focus_saved,
 
   h = gridset(goleft),
-  j = minimize_window(),
+  j = focusify(),
   k = gridset(gobig),
   l = gridset(goright),
-
-  m = minimize_window(),
 
   g = apply_layout(layout2),
 
@@ -176,15 +184,38 @@ definitions = {
   e = hints.windowHints
 }
 
--- launch and focus applications
-fnutils.each({
-  { key = "f", app = "FirefoxDeveloperEdition" },
-  { key = "e", app = "Emacs" },
-  { key = "i", app = "iTerm" },
-  { key = "m", app = "Mjolnir" },
-  { key = "d", app = "Dash" },
-}, function(object)
-    definitions[object.key] = function() application.launchorfocus(object.app) end
+mapped_apps = {
+  { key = "f", name = "FirefoxDeveloperEdition" },
+  { key = "i", name = "iTerm" },
+  { key = "d", name = "Dash" }
+}
+
+-- Launch our apps.
+fnutils.each(mapped_apps, function(object)
+  application.launchorfocus(object.name)
+end)
+
+-- Give us an app attr to use.
+fnutils.each(mapped_apps, function(object)
+  object.app = appfinder.app_from_name(object.name)
+end)
+
+-- Hide the apps.
+fnutils.each(mapped_apps, function(object)
+  object.app:hide()
+end)
+
+-- Map keys for opening/closing.
+fnutils.each(mapped_apps, function(object)
+    -- This is buggy because I cannot check if an application is currently
+    -- running. application.runningapplications() induces a bug in Firefox.
+    definitions[object.key] = function()
+      if object.app:ishidden() then
+        application.launchorfocus(object.name)
+      else
+        object.app:hide()
+      end
+    end
 end)
 
 init()
