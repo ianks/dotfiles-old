@@ -271,27 +271,10 @@ of plugins above to learn more.
 * [Other recommended OSX productivity tools](doc/osx_tools.md)
 * [Yan's Blog](http://yanpritzker.com)
 
-### OSX Hacks
-
-The osx file is a bash script that sets up sensible defaults for devs and power users
-under osx. Read through it before running it. To use:
-
-    ./osx
-
-These hacks are Lion-centric. May not work for other OS'es. My favorite mods include:
-
-  * Ultra fast key repeat rate (now you can scroll super quick using j/k)
-  * No disk image verification (downloaded files open quicker)
-  * Display the ~/Library folder in finder (hidden in Lion)
-
-### Macvim troubles with Lua?
+### Vim troubles with Lua?
 ```
-brew uninstall macvim
-brew remove macvim
-brew cleanup
-brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit
+brew install vim --with-lua --with-luajit
 ```
-
 
 ### [Pry](http://pry.github.com/)
 
