@@ -1,14 +1,18 @@
- _     _           _
-    | |   | |         | |
-    | |___| |_____  __| | ____
-    |_____  (____ |/ _  |/ ___)
-     _____| / ___ ( (_| | |
-    (_______\_____|\____|_|
+```
+                             _                    _ _
+                            | |                  | | |
+             _   _  __ _  __| |_ __   ____   __ _| | |__
+            | | | |/ _` |/ _` | '__| |____| / _` | | ___|
+            | |_| | (_| | (_| | |          | (_| | | |__
+             \__, |\__,_|\__,_|_|           \__,_|_|\___|
+              __/ |
+             |___/
 
-    # Yet Another Dotfile Repo v1.1
-    # Now with Prezto and Vundle!
+    # YADR-alt
+    # A YADR fork with a focus on terminal VIM and user customization.
 
-    sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+    $ sh -c "`curl -fsSL https://raw.github.com/ianks/yadr-alt/master/install.sh`"
+```
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
