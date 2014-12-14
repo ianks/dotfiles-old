@@ -1,17 +1,6 @@
---type-set
-less=.less
-
---type-set
-coffee=.coffee
-
---type-set
-dust=.dust
-
---type-set
-py=.py
-
---type-set
-ssp=.ssp
+--sort-files
+--all
+--ignore-case
 
 --ignore-dir=log
 --ignore-dir=tmp
@@ -19,5 +8,3 @@ ssp=.ssp
 --ignore-dir=public/generated
 --ignore-dir=node_modules
 --ignore-file=ext:*min*
---sort-files
--a
