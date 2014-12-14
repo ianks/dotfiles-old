@@ -284,9 +284,11 @@ def install_prezto
   else
     puts "Setting zsh as your default shell"
 
-    if File.readlines("/private/etc/shells").grep("/usr/local/bin/zsh").empty?
-      puts "Adding zsh to standard shell list"
-      run %{ echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells }
+    if RUBY_PLATFORM.downcase.include?("darwin")
+      if File.readlines("/private/etc/shells").grep("/usr/local/bin/zsh").empty?
+        puts "Adding zsh to standard shell list"
+        run %{ echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells }
+      end
     end
 
     run %{ chsh -s #{`which zsh`} }
