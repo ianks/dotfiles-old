@@ -22,7 +22,6 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
-  'terminal' \
   'editor' \
   'history' \
   'directory' \
@@ -30,14 +29,14 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'archive' \
-  'fasd' \
   'git' \
   'ruby' \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
   'prompt' \
-  'tmux'
+  'tmux' \
+  'osx'
 
 #
 # Editor
