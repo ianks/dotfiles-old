@@ -35,6 +35,3 @@ function! MyFilename()
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
        \ ('' != expand('%') ? expand('%') : '[NoName]')
 endfunction
-
-" Use status bar even with single buffer
-set laststatus=2
