@@ -1,5 +1,5 @@
-Bundle "chrisbra/color_highlight.git"
-Bundle "itchyny/lightline.vim"
-Bundle "jby/tmux.vim.git"
-Bundle "xsunsmile/showmarks.git"
-Bundle "junegunn/seoul256.vim"
+Plugin 'chrisbra/color_highlight.git'
+Plugin 'itchyny/lightline.vim'
+Plugin 'jby/tmux.vim.git'
+Plugin 'xsunsmile/showmarks.git'
+Plugin 'junegunn/seoul256.vim'

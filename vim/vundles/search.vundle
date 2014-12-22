@@ -1,2 +1,2 @@
-Bundle "justinmk/vim-sneak"
-Bundle "rking/ag.vim"
+Plugin 'justinmk/vim-sneak'
+Plugin 'rking/ag.vim'
