@@ -150,21 +150,6 @@ local goleft = {x = 0, y = 0, w = gw/2, h = gh}
 local goright = {x = gw/2, y = 0, w = gw/2, h = gh}
 local gobig = {x = 0, y = 0, w = gw, h = gh}
 
-local full_apps = {
-  "Emacs",
-  "Dropbox",
-  "Mailbox",
-  "FirefoxDeveloperEdition"
-}
-
-local layout2 = {
-  Dash = {1, gomiddle},
-  iTerm = {2, goleft},
-  FirefoxDeveloperEdition = {2, goright}
-}
-
-fnutils.each(full_apps, function(app) layout2[app] = {1, gobig} end)
-
 definitions = {
   a = save_focus,
   [";"] = focus_saved,
@@ -185,7 +170,7 @@ definitions = {
 }
 
 mapped_apps = {
-  { key = "f", name = "FirefoxDeveloperEdition" },
+  { key = "c", name = "Google Chrome" },
   { key = "i", name = "iTerm" },
   { key = "d", name = "Dash" }
 }
