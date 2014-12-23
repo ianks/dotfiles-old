@@ -70,3 +70,6 @@ alias be='bundle exec'
 # Packages
 alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
 alias aptu='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
+
+# Random
+alias wisdom='fortune -s | cowsay'
