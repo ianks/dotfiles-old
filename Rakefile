@@ -12,6 +12,9 @@ task :install => [:submodule_init, :submodules] do
 
   install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
   install_rvm_binstubs
+  install_gems
+  install_python_packages
+  install_node_packages
 
   # this has all the runcoms from this directory.
   file_operation(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
@@ -154,6 +157,38 @@ def run_bundle_config
   puts "Configuring Bundlers for parallel gem installation"
   puts "======================================================"
   run %{ bundle config --global jobs #{bundler_jobs} }
+  puts
+end
+
+def install_node_packages
+  return unless system('which npm')
+
+  puts "======================================================"
+  puts "Install Node packages"
+  puts "======================================================"
+  run %{ npm install -g jshint }
+  puts
+end
+
+def install_python_packages
+  return unless system('which pip')
+  return unless system('pip3')
+
+  puts "======================================================"
+  puts "Install Python packages"
+  puts "======================================================"
+  run %{ pip install pylint ipython }
+  run %{ pip3 install pylint ipython }
+  puts
+end
+
+def install_gems
+  return unless system('which gem')
+
+  puts "======================================================"
+  puts "Installing gems for optimized Ruby experience"
+  puts "======================================================"
+  run %{ gem install pry pry-theme lunchy rubocop }
   puts
 end
 
