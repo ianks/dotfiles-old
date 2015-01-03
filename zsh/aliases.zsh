@@ -73,3 +73,6 @@ alias aptu='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get aut
 
 # Random
 alias wisdom='fortune -s | cowsay'
+
+# Yeah.
+alias v='vim'
