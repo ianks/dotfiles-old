@@ -1,6 +1,5 @@
 Plugin 'derekwyatt/vim-scala'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'garbas/vim-snipmate.git'
 Plugin 'honza/vim-snippets'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
