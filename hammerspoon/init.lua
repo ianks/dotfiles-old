@@ -1,58 +1,34 @@
 -- Extensions
 local application = require "hs.application"
-local window = require "hs.window"
-local hotkey = require "hs.hotkey"
-local keycodes = require "hs.keycodes"
-local fnutils = require "hs.fnutils"
-local alert = require "hs.alert"
-local screen = require "hs.screen"
-local hints = require "hs.hints"
-local grid = require "hs.grid"
-local appfinder = require "hs.appfinder"
+local window      = require "hs.window"
+local hotkey      = require "hs.hotkey"
+local keycodes    = require "hs.keycodes"
+local fnutils     = require "hs.fnutils"
+local alert       = require "hs.alert"
+local screen      = require "hs.screen"
+local hints       = require "hs.hints"
+local grid        = require "hs.grid"
+local appfinder   = require "hs.appfinder"
 
 local definitions = {}
-local hyper = {}
-auxWin = nil
+local hyper       = {}
+auxWin            = nil
 
-local grab_closest_window = function()
-  local windows = window.visibleWindows()
-
-  if windows then
-    return true
-    -- return window.application(windows[1])
-  else
-    alert.show("Clean as a whistle.")
-    return false
-  end
-end
-
-local maximize_window = function()
-  return function()
-    local win = window.focusedWindow()
-
-    if win then
-      save_focus()
-      window.maximize(win)
-    else
-      focus_saved()
-    end
-  end
-end
-
+-- Minimize window, but save as focused
 local focusify = function()
   return function()
     local win = window.focusedWindow()
 
     if win then
-      save_focus()
+      saveFocus()
       window.minimize(win)
     else
-      focus_saved()
+      focusSaved()
     end
   end
 end
 
-local gridset = function(frame)
+local setGrid = function(frame)
   return function()
     local win = window.focusedWindow()
 
@@ -64,11 +40,11 @@ local gridset = function(frame)
   end
 end
 
-function save_focus()
+function saveFocus()
   auxWin = window.focusedWindow()
 end
 
-function focus_saved()
+function focusSaved()
   if auxWin then
     if window.focusedWindow() == auxWin then
       auxWin:minimize()
@@ -149,13 +125,13 @@ local goright = {x = gw/2, y = 0, w = gw/2, h = gh}
 local gobig = {x = 0, y = 0, w = gw, h = gh}
 
 definitions = {
-  a = save_focus,
-  [";"] = focus_saved,
+  a = saveFocus,
+  [";"] = focusSaved,
 
-  h = gridset(goleft),
+  h = setGrid(goleft),
   j = focusify(),
-  k = gridset(gobig),
-  l = gridset(goright),
+  k = setGrid(gobig),
+  l = setGrid(goright),
 
   g = apply_layout(layout2),
 
@@ -198,5 +174,9 @@ fnutils.each(mapped_apps, function(object)
       end
     end
 end)
+
+-- Auto-reload config
+function reloadConfig(files) hs.reload() end
+hs.pathwatcher.new(os.getenv('HOME') .. '/.hammerspoon/', reloadConfig):start()
 
 init()
