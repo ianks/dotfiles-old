@@ -1,3 +1,5 @@
+autocmd FileType markdown
+      \ let b:dispatch = 'octodown %'
 autocmd FileType python
       \ let b:dispatch = 'python %'
 autocmd FileType ruby
