@@ -90,7 +90,7 @@ set wildignore+=*.png,*.jpg,*.gif
 " ================ Scrolling ========================
 
 set sidescroll=1
-
+set scrolloff=8
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
