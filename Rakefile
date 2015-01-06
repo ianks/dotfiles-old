@@ -11,7 +11,6 @@ task :install => [:submodule_init, :submodules] do
   puts
 
   install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
-  install_rvm_binstubs
   install_gems
   install_python_packages
   install_node_packages
@@ -171,16 +170,6 @@ def install_gems
   puts "Installing gems for optimized Ruby experience"
   puts "======================================================"
   run %{ gem install pry pry-theme lunchy rubocop }
-  puts
-end
-
-def install_rvm_binstubs
-  puts "======================================================"
-  puts "Installing RVM Bundler support. Never have to type"
-  puts "bundle exec again! Please use bundle --binstubs and RVM"
-  puts "will automatically use those bins after cd'ing into dir."
-  puts "======================================================"
-  run %{ chmod +x $rvm_path/hooks/after_cd_bundler }
   puts
 end
 
