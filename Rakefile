@@ -288,8 +288,9 @@ def install_prezto
   file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
 
   puts
-  puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
+  puts "Adding zprezto modules and bug-fixes..."
   run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" }
+  run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zprofile" "${ZDOTDIR:-$HOME}/.zprofile" }
 
   puts
   puts "Creating directories for your customizations"
