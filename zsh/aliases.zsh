@@ -76,3 +76,6 @@ alias wisdom='fortune -s | cowsay'
 
 # Yeah.
 alias v='vim'
+
+# Remove binding.pry
+alias depry="ag -l 'binding.pry' | xargs sed -i '' -e '/binding.pry/d'"
