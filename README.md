@@ -249,8 +249,6 @@ of plugins above to learn more.
 #### Rails & Ruby
 
  * `,vv` and `,cc` to switch between view and controller - these are maps to :Rcontroller and :Rview. Explore the :R<Tab> family of commands for more fun from rails.vim!
- * `,rs` and `,rl` to run rspec or a spec line in iTerm (check iTerm window for results)
- * `,ss` and `,sl` for the same using `spring rspec` which makes your Rails specs faster by caching the Rails env (must have spring gem installed)
  * vim-ruby-refactoring - try `,rem`, `,rel` to extract methods or let statements
  * `Ctrl-s` - Open related spec in a split. Similar to :A and :AV from rails.vim but is also aware of the fast_spec dir and faster to type
  * `:Bopen [gem name]` to navigate to a gem (@tpope/vim-bundler)
@@ -281,8 +279,9 @@ brew install vim --with-lua --with-luajit
 
 ### [Pry](http://pry.github.com/)
 
-Pry offers a much better out of the box IRB experience with colors, tab completion, and lots of other tricks. You can also use it
-as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
+Pry offers a much better out of the box IRB experience with colors, tab
+completion, and lots of other tricks. You can also use it as an actual debugger
+by installing [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug).
 
 [Learn more about YADR's pry customizations and how to install](doc/pry.md)
 
@@ -295,5 +294,3 @@ Automate OSX tasks using Hammerspoon. For example, `CMD ALT CTRL f` will open a
 Firefox window from anywhere in the OS. `CMD ALT CTRL h` will snap a window to
 the left side of the screen and you guessed it, `CMD ALT CTRL l` will snap it to
 the right.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/skwp/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
