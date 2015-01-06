@@ -287,9 +287,11 @@ as an actual debugger by installing [pry-nav](https://github.com/nixme/pry-nav).
 [Learn more about YADR's pry customizations and how to install](doc/pry.md)
 
 
-### [Mjolnir](http://mjolnir.io/)
+### [Hammerspoon](http://www.hammerspoon.org/)
 
-Automate OSX tasks using Mjolnir. For example, `CMD ALT CTRL f` will open a
+*note*: Requires Hammerspoon to be installed.
+
+Automate OSX tasks using Hammerspoon. For example, `CMD ALT CTRL f` will open a
 Firefox window from anywhere in the OS. `CMD ALT CTRL h` will snap a window to
 the left side of the screen and you guessed it, `CMD ALT CTRL l` will snap it to
 the right.

@@ -26,18 +26,12 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
 
-  if want_to_install?('mjolnir (OSX window managing/scripting)')
+  if want_to_install?('Hammerspoon (OSX window managing/scripting)')
     if RUBY_PLATFORM.downcase.include? 'darwin'
-      file_operation(Dir.glob('mjolnir'))
+      file_operation(Dir.glob('hammerspoon'))
 
       run %{brew install lua luarocks}
       run %{echo 'rocks_servers = { "http://rocks.moonscript.org" }' > ~/.luarocks/config.lua}
-
-      %w(mjolnir.bg.grid mjolnir.th.hints mjolnir.cmsj.appfinder).each do |p|
-        run %{luarocks install #{p}}
-      end
-    else
-      puts "Mjolnir is a OSX specific feature."
     end
   end
 

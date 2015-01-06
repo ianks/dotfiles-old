@@ -1,23 +1,21 @@
 -- Extensions
-local application = require "mjolnir.application"
-local window = require "mjolnir.window"
-local hotkey = require "mjolnir.hotkey"
-local keycodes = require "mjolnir.keycodes"
-local fnutils = require "mjolnir.fnutils"
-local alert = require "mjolnir.alert"
-local screen = require "mjolnir.screen"
-
--- User packages
-local grid = require "mjolnir.bg.grid"
-local hints = require "mjolnir.th.hints"
-local appfinder = require "mjolnir.cmsj.appfinder"
+local application = require "hs.application"
+local window = require "hs.window"
+local hotkey = require "hs.hotkey"
+local keycodes = require "hs.keycodes"
+local fnutils = require "hs.fnutils"
+local alert = require "hs.alert"
+local screen = require "hs.screen"
+local hints = require "hs.hints"
+local grid = require "hs.grid"
+local appfinder = require "hs.appfinder"
 
 local definitions = {}
 local hyper = {}
 auxWin = nil
 
 local grab_closest_window = function()
-  local windows = window.visiblewindows()
+  local windows = window.visibleWindows()
 
   if windows then
     return true
@@ -30,7 +28,7 @@ end
 
 local maximize_window = function()
   return function()
-    local win = window.focusedwindow()
+    local win = window.focusedWindow()
 
     if win then
       save_focus()
@@ -43,7 +41,7 @@ end
 
 local focusify = function()
   return function()
-    local win = window.focusedwindow()
+    local win = window.focusedWindow()
 
     if win then
       save_focus()
@@ -56,7 +54,7 @@ end
 
 local gridset = function(frame)
   return function()
-    local win = window.focusedwindow()
+    local win = window.focusedWindow()
 
     if win then
       grid.set(win, frame, win:screen())
@@ -67,15 +65,15 @@ local gridset = function(frame)
 end
 
 function save_focus()
-  auxWin = window.focusedwindow()
+  auxWin = window.focusedWindow()
 end
 
 function focus_saved()
   if auxWin then
-    if window.focusedwindow() == auxWin then
+    if window.focusedWindow() == auxWin then
       auxWin:minimize()
     else
-      if auxWin:isminimized() then
+      if auxWin:isMinimized() then
         auxWin:unminimize()
       end
 
@@ -109,7 +107,7 @@ function rebind_hotkeys()
 end
 
 function apply_place(win, place)
-  local scrs = screen:allscreens()
+  local scrs = screen:allScreens()
   local scr = scrs[place[1]]
   grid.set(win, place[2], scr)
 end
@@ -117,9 +115,9 @@ end
 function apply_layout(layout)
   return function()
     for app_name, place in pairs(layout) do
-      local app = appfinder.app_from_name(app_name)
+      local app = appfinder.appFromName(app_name)
       if app then
-        for i, win in ipairs(app:allwindows()) do
+        for i, win in ipairs(app:allWindows()) do
           apply_place(win, place)
         end
       end
@@ -129,8 +127,8 @@ end
 
 function init()
   create_hotkeys()
-  keycodes.inputsourcechanged(rebind_hotkeys)
-  alert.show("Mjolnir, at your service.")
+  keycodes.inputSourceChanged(rebind_hotkeys)
+  alert.show("Hammerspoon, at your service.")
 end
 
 -- Actual config =================================
@@ -161,11 +159,9 @@ definitions = {
 
   g = apply_layout(layout2),
 
-  d = grid.pushwindow_nextscreen,
-  r = mjolnir.reload,
-  q = function() appfinder.app_from_name("Mjolnir"):kill() end,
-  i = function() hints.appHints(window.focusedwindow():application()) end,
-
+  d = grid.pushWindowNextScreen,
+  r = hs.reload,
+  q = function() appfinder.appFromName("hs"):kill() end,
   e = hints.windowHints
 }
 
@@ -177,14 +173,14 @@ mapped_apps = {
 
 -- Launch our apps.
 fnutils.each(mapped_apps, function(object)
-  application.launchorfocus(object.name)
+  application.launchOrFocus(object.name)
 end)
 
 -- Give us an app attr to use.
 fnutils.each(mapped_apps, function(object)
-  object.app = appfinder.app_from_name(object.name)
+  object.app = appfinder.appFromName(object.name)
 end)
-
+--
 -- Hide the apps.
 fnutils.each(mapped_apps, function(object)
   object.app:hide()
@@ -195,8 +191,8 @@ fnutils.each(mapped_apps, function(object)
     -- This is buggy because I cannot check if an application is currently
     -- running. application.runningapplications() induces a bug in Firefox.
     definitions[object.key] = function()
-      if object.app:ishidden() then
-        application.launchorfocus(object.name)
+      if object.app:isHidden() then
+        application.launchOrFocus(object.name)
       else
         object.app:hide()
       end
