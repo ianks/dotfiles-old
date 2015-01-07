@@ -67,6 +67,9 @@ alias rdmr='rake db:migrate:redo'
 alias c='rails c' # Rails 3
 alias be='bundle exec'
 
+# Python
+alias pyclean='find . -name "*.pyc" -print0 | xargs -0 rm'
+
 # Packages
 alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
 alias aptu='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
