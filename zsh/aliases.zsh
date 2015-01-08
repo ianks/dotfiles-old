@@ -22,6 +22,7 @@ alias cls='clear;ls'
 # Show human friendly numbers and colors
 alias df='df -h'
 alias du='du -h -d 2'
+alias day='date +%Y-%m-%d'
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
