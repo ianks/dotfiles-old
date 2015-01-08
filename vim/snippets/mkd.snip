@@ -1,0 +1,10 @@
+snippet frontmatter
+abbr frontmatter for Jekyll
+options head
+  ---
+  title: ${1:#:title}
+  date:  `strftime("%Y-%m-%d")`
+  tags:  ${2:#:tags}
+  ---
+
+  ${0}
