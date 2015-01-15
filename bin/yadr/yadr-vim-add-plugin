@@ -21,7 +21,7 @@ GitStyleBinary.command do
     repo=command.opts[:url]
     repo=command.opts[:url]
     puts "Adding \"#{repo}\" to the plugin list"
-    bundle_path=repo.gsub(/http.?:\/\/github\.com\//, "")
+    plug_path=repo.gsub(/http.?:\/\/github\.com\//, "")
     Plug::add_plugin_to_plug repo
     Plug::update_plug
   end

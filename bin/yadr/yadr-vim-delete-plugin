@@ -18,7 +18,7 @@ GitStyleBinary.command do
   run do |command|
     repo=command.opts[:url]
     puts "Removing \"#{repo}\" from the plugin list"
-    bundle_path=repo.gsub("https://github.com/", "")
+    plug_path=repo.gsub("https://github.com/", "")
     removed=Plug::remove_plugin_from_plug repo
     if removed
       Plug::update_plug

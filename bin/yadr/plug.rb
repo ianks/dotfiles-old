@@ -6,15 +6,15 @@ module Plug
     return if contains_plug? plugin_repo
 
     plugs = plugs_from_file
-    last_bundle_dir = plugs.rindex{ |line| line =~ /^Plug / }
-    last_bundle_dir = last_bundle_dir ? last_bundle_dir+1 : 0
-    plugs.insert last_bundle_dir, "Plug \"#{plugin_repo}\""
+    last_plug_dir = plugs.rindex{ |line| line =~ /^Plug / }
+    last_plug_dir = last_plug_dir ? last_plug_dir+1 : 0
+    plugs.insert last_plug_dir, "Plug \'#{plugin_repo}\'\n"
     write_plugs_to_file plugs
   end
 
   def self.remove_plugin_from_plug(plugin_repo)
     plugs = plugs_from_file
-    deleted_value = plugs.reject!{ |line| line =~ /Plug "#{plugin_repo}"/ }
+    deleted_value = plugs.reject!{ |line| line =~ /Plug '#{plugin_repo}'/ }
 
     write_plugs_to_file plugs
 
@@ -22,12 +22,12 @@ module Plug
   end
 
   def self.plug_list
-		plugs_from_file.select{ |line| line =~ /^Plug .*/ }.map{ |line| line.gsub(/Plug "(.*)"/, '\1')}
+    plugs_from_file.select{ |line| line =~ /^Plug .*/ }.map{ |line| line.gsub(/Plug '(.*)'/, '\1')}
   end
 
   def self.update_plug
-		system "vim --noplugin -u #{ENV['HOME']}/.vim/plugs.vim -N " \
-			"\"+set hidden\" \"+syntax on\" +PlugClean +PlugInstall +qall"
+    system "vim --noplugin -u #{ENV['HOME']}/.vim/plugs.vim -N " \
+      "\"+set hidden\" \"+syntax on\" +PlugClean +PlugInstall +qall"
   end
 
 
