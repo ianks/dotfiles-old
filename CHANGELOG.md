@@ -25,5 +25,5 @@ Dec 17, 2013
 March 29, 2013
 ==================
 
-* Migrated to Vundle instead of pathogen for easier bundle management
+* Migrated to Plug instead of pathogen for easier bundle management
 * Added Silver Searcher for lightning fast :Gsearch

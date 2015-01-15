@@ -1,0 +1,6 @@
+Plug 'chrisbra/color_highlight'
+Plug 'godlygeek/csapprox'
+Plug 'itchyny/lightline.vim'
+Plug 'jby/tmux.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'xsunsmile/showmarks'

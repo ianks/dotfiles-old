@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.vundle set filetype=vim
+au BufNewFile,BufRead *.plug set filetype=vim

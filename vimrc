@@ -25,15 +25,21 @@ syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all
+" The mapleader has to be set before plug starts loading all
 " the plugins.
 let mapleader = "\<Space>"
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
+" =============== plugs Initialization ===============
+" This loads all the plugins specified in ~/.vim/plugss.vim
+" Use plugs plugin to manage all other plugins
+
+if !filereadable(expand("~/.vim/autoload/plug.vim"))
+  silent !mkdir -p ~/.vim/autoload
+  silent !curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+if filereadable(expand("~/.vim/plugs.vim"))
+  source ~/.vim/plugs.vim
 endif
 
 " ================ Turn Off Swap Files ==============

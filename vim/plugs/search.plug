@@ -1,0 +1,2 @@
+Plug 'justinmk/vim-sneak'
+Plug 'rking/ag.vim'

@@ -1,6 +1,0 @@
-Plugin 'chrisbra/color_highlight.git'
-Plugin 'godlygeek/csapprox.git'
-Plugin 'itchyny/lightline.vim'
-Plugin 'jby/tmux.vim.git'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'xsunsmile/showmarks.git'

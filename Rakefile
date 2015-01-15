@@ -1,6 +1,6 @@
 require 'rake'
 require 'fileutils'
-require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'vundle')
+require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'plug')
 
 desc "Hook our dotfiles into system-standard positions."
 task :install => [:submodule_init, :submodules] do
@@ -37,7 +37,7 @@ task :install => [:submodule_init, :submodules] do
 
   if want_to_install?('vim configuration (highly recommended)')
     file_operation(Dir.glob('{vim,vimrc}'))
-    Rake::Task["install_vundle"].execute
+    Rake::Task["install_plug"].execute
   end
 
   Rake::Task["install_prezto"].execute
@@ -79,30 +79,31 @@ task :submodules do
     run %{
       cd $HOME/.yadr
       git submodule update --recursive
-      git clean -df
+      # git clean -df
     }
     puts
   end
 end
 
-desc "Runs Vundle installer in a clean vim environment"
-task :install_vundle do
+desc "Runs Plug installer in a clean vim environment"
+task :install_plug do
   puts "======================================================"
-  puts "Installing and updating vundles."
-  puts "The installer will now proceed to run BundleInstall."
+  puts "Installing and updating plugs."
+  puts "The installer will now proceed to run PlugInstall."
   puts "======================================================"
 
   puts ""
 
-  vundle_path = File.join('vim','bundle', 'vundle')
-  unless File.exists?(vundle_path)
+  plug_path = File.join ENV['HOME'], 'vim', 'autoload'
+  unless File.exists? plug_path
     run %{
-      cd $HOME/.yadr
-      git clone https://github.com/gmarik/vundle.git #{vundle_path}
+      mkdir -p ~/.vim/autoload
+      curl -fLo ~/.vim/autoload/plug.vim \
+          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     }
   end
 
-  Vundle::update_vundle
+  Plug::update_plug
 end
 
 task :default => 'install'

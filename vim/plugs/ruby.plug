@@ -1,0 +1,7 @@
+Plug 'Keithbsmiley/rspec.vim'
+Plug 'ck3g/vim-change-hash-syntax'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rbenv'
