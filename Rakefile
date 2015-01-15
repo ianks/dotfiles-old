@@ -79,7 +79,7 @@ task :submodules do
     run %{
       cd $HOME/.yadr
       git submodule update --recursive
-      # git clean -df
+      git clean -df
     }
     puts
   end
