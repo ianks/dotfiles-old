@@ -1,11 +1,11 @@
-Plug 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'honza/vim-snippets'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'skwp/vim-html-escape'
-Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-haml'
-Plug 'vivien/vim-addon-linux-coding-style'
+Plug 'skwp/vim-html-escape', { 'for': 'html' }
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'tpope/vim-haml', { 'for': 'haml' }
+Plug 'vivien/vim-addon-linux-coding-style', { 'for': 'c' }
