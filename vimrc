@@ -20,7 +20,7 @@ set visualbell                  "No sounds
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-"turn on syntax highlighting
+" Turn on syntax highlighting
 syntax on
 
 " Change leader to a comma because the backslash is too far away
@@ -33,7 +33,7 @@ let mapleader = "\<Space>"
 set pumheight=8
 
 " =============== plugs Initialization ===============
-" This loads all the plugins specified in ~/.vim/plugss.vim
+" This loads all the plugins specified in ~/.vim/plugs.vim
 " Use plugs plugin to manage all other plugins
 
 if !filereadable(expand("~/.vim/autoload/plug.vim"))
@@ -60,20 +60,6 @@ if has('persistent_undo')
   set undofile
 endif
 
-" ================ Indentation ======================
-
-set smartindent
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
-
-filetype plugin on
-filetype indent on
-
-set wrap         "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
-
 " ================ Folds ============================
 
 set foldmethod=indent   "fold based on indent
@@ -95,7 +81,6 @@ set wildignore+=node_modules/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-"
 " ================ Scrolling ========================
 
 set sidescroll=1
