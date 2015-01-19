@@ -1,3 +1,2 @@
-Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'xolox/vim-misc'
