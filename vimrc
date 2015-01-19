@@ -29,6 +29,9 @@ syntax on
 " the plugins.
 let mapleader = "\<Space>"
 
+" Height of menu
+set pumheight=8
+
 " =============== plugs Initialization ===============
 " This loads all the plugins specified in ~/.vim/plugss.vim
 " Use plugs plugin to manage all other plugins
