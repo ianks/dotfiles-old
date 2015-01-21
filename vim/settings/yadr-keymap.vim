@@ -13,14 +13,13 @@ nnoremap <leader>yw yiww
 
 " <leader>ow = 'overwrite word', replace a word with what's in the yank buffer
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
-nnoremap <leader>ow "_diwhp
+nnoremap <leader>ow "_diwh"+p
 
 "make Y consistent with C and D
 nnoremap Y y$
 function! YRRunAfterMaps()
   nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
 endfunction
-
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
 " interested in working with text rather than empty space. If
@@ -65,17 +64,13 @@ map <leader>` ysiw`
 nnoremap <leader>. '.
 
 "When typing a string, your quotes auto complete. Move past the quote
-"while still in insert mode by hitting Ctrl-a. Example:
+"while still in insert mode by hitting Ctrl-j. Example:
 "
-" type 'foo<c-a>
+" type 'foo<c-j>
 "
-" the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
+" the first quote will autoclose so you'll get 'foo' and hitting <c-j> will
 " put the cursor right after the quote
-imap <C-a> <esc>wa
-
-" ==== NERD tree
-" Open the project tree and expose current file in the nerdtree with Ctrl-\
-nnoremap <silent> <C-\> :NERDTreeToggle<CR>
+imap <C-j> <esc>wa
 
 " <leader>q to toggle quickfix window (where you have stuff like Ag)
 " <leader>oq to open it back up (rare)
@@ -104,9 +99,6 @@ nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 
-"(v)im (c)ommand - execute current line as a vim command
-nmap <silent> <leader>vc yy:<C-f>p<C-c><CR>
-
 "(v)im (r)eload
 nmap <silent> <leader>vr :so %<CR>
 
@@ -121,8 +113,20 @@ noremap <leader>hl :set hlsearch! hlsearch?<CR>
 nnoremap ' `
 nnoremap ` '
 
-" Get the current highlight group. Useful for then remapping the color
-map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
-
-" Repeat last shell command
+" Re-run last shell command
 nnoremap <leader>rr :!!<CR>
+
+" Now using the middle finger of either hand you can type
+" underscores with apple-k
+imap <silent> <C-k> _
+imap <silent> <C-l> -
+
+" move up/down quickly by using Cmd-j, Cmd-k
+" which will move us around by functions
+nnoremap <silent> <C-j> }
+nnoremap <silent> <C-k> {
+vnoremap <silent> <C-j> }
+vnoremap <silent> <C-k> {
+
+autocmd FileType ruby map <buffer> <C-j> ]m
+autocmd FileType ruby map <buffer> <C-k> [m
