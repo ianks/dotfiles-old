@@ -120,13 +120,3 @@ nnoremap <leader>rr :!!<CR>
 " underscores with apple-k
 imap <silent> <C-k> _
 imap <silent> <C-l> -
-
-" move up/down quickly by using Cmd-j, Cmd-k
-" which will move us around by functions
-nnoremap <silent> <C-j> }
-nnoremap <silent> <C-k> {
-vnoremap <silent> <C-j> }
-vnoremap <silent> <C-k> {
-
-autocmd FileType ruby map <buffer> <C-j> ]m
-autocmd FileType ruby map <buffer> <C-k> [m
