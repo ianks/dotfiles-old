@@ -36,7 +36,8 @@ zstyle ':prezto:load' pmodule \
   'ssh' \
   'prompt' \
   'tmux' \
-  'osx'
+  'osx' \
+  'node'
 
 #
 # Editor
