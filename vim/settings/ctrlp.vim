@@ -4,7 +4,7 @@ endif
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command =
-    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+    \ 'ag %s --files-with-matches --nocolor -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -30,9 +30,6 @@ nnoremap <silent> <leader>t :CtrlP<CR>
 " Additional mapping for buffer search
 nnoremap <silent> <leader>b :CtrlPBuffer<cr>
 
-" Cmd-Shift-P to clear the cache
-nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
-
-"Cmd-Shift-(M)ethod - jump to a method (tag in current file)
+"leader-method - jump to a method (tag in current file)
 "Ctrl-m is not good - it overrides behavior of Enter
-nnoremap <silent> <D-M> :CtrlPBufTag<CR>
+nnoremap <silent> <leader>m :CtrlPBufTag<CR>
