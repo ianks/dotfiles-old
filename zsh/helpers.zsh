@@ -20,3 +20,7 @@ replace() {
 
   ag -l $find_this $* | xargs sed -i '' "s/$find_this/$replace_with/g"
 }
+
+whoz_blockin() {
+  lsof -i tcp:"$1"
+}
