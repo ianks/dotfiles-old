@@ -1,5 +1,6 @@
 --recurse=yes
 --tag-relative=yes
+--fields=+l
 
 --exclude=*.min.js
 --exclude=jquery.*.js
