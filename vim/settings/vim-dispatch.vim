@@ -15,8 +15,8 @@ autocmd FileType ruby
 autocmd FileType java
       \ let b:dispatch = 'javac %'
 autocmd FileType scala
-      \ let b:start = 'sbt' |
-      \ let b:dispatch = 'sbt'
+      \ let b:start = 'sbt console' |
+      \ let b:dispatch = 'sbt run'
 autocmd FileType javascript
       \ let b:start = 'node' |
       \ let b:dispatch = 'grunt test'
