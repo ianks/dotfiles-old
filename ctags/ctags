@@ -1,6 +1,7 @@
 --recurse=yes
 --tag-relative=yes
---fields=+l
+--fields=+liaS
+--extra=+q
 
 --exclude=*.min.js
 --exclude=jquery.*.js
@@ -11,6 +12,8 @@
 --exclude=*.pyo
 --exclude=*.class
 --exclude=.DS_Store
+
+--c++-kinds=+p
 
 --langdef=js
 --langmap=js:.js
