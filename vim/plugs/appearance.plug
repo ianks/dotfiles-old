@@ -1,4 +1,5 @@
 Plug 'chrisbra/color_highlight'
+Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/csapprox'
 Plug 'itchyny/lightline.vim'
 Plug 'jby/tmux.vim'
