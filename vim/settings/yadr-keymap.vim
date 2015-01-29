@@ -77,11 +77,6 @@ imap <C-j> <esc>wa
 nmap <silent> <leader>qc :cclose<CR>
 nmap <silent> <leader>qo :copen<CR>
 
-"Move back and forth through previous and next buffers
-"with <leader>z and <leader>x
-nnoremap <silent> <leader>z :bp<CR>
-nnoremap <silent> <leader>x :bn<CR>
-
 " ============================
 " Shortcuts for everyday tasks
 " ============================
