@@ -69,7 +69,7 @@ set nofoldenable        "dont fold by default
 " ================ Completion =======================
 
 set wildmode=list:longest
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
@@ -80,6 +80,8 @@ set wildignore+=log/**
 set wildignore+=node_modules/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.class,*.jar
+set wildignore+=*.pdf
 
 " ================ Scrolling ========================
 
