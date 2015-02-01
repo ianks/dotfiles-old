@@ -30,7 +30,7 @@ syntax on
 let mapleader = "\<Space>"
 
 " Height of menu
-set pumheight=8
+set pumheight=12
 
 " =============== plugs Initialization ===============
 " This loads all the plugins specified in ~/.vim/plugs.vim
