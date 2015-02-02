@@ -13,4 +13,10 @@ let g:syntastic_python_checkers=['pep8', 'pylint', 'python']
 let g:syntastic_javascript_checkers=['jshint', 'eslint']
 let g:syntastic_scala_checkers=['scalac', 'scalastyle']
 
+" scalastyle
 let g:syntastic_scala_scalastyle_jar='/usr/local/Cellar/scalastyle/0.6.0/libexec/scalastyle_2.10-0.6.0-batch.jar'
+let g:syntastic_scala_scalastyle_config_file='~/.yadr/stylecheckers/scalastyle.xml'
+
+" checkstyle
+let g:syntastic_java_checkstyle_classpath='/usr/local/Cellar/checkstyle/6.2/libexec/checkstyle-6.2-all.jar'
+let g:syntastic_java_checkstyle_conf_file='~/.yadr/stylecheckers/checkstyle.xml'
