@@ -2,7 +2,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Keithbsmiley/investigate.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
-Plug 'Shougo/neocomplete'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
 Plug 'mattn/webapi-vim'
@@ -27,8 +26,8 @@ Plug 'vim-scripts/lastpos.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'xolox/vim-easytags'
 
-if has("lua")
-  Plug 'Shougo/neocomplete.vim'
-else
+if has("nvim")
   Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+else
+  Plug 'Shougo/neocomplete'
 endif
