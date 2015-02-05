@@ -10,7 +10,7 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#max_list = 20
 
 " Set minimum syntax keyword length.
-let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#auto_completion_start_length = 2
 
 " This makes sure we use neocomplete completefunc instead of
 " the one in rails.vim, otherwise this plugin will crap out.
@@ -22,11 +22,15 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
+" Use tab to scroll through neocomplete
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Priority ranking for snippets
+call neocomplete#custom#source('ultisnips', 'rank', 500)
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
