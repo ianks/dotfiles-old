@@ -23,10 +23,7 @@ set hidden
 " Turn on syntax highlighting
 syntax on
 
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-" The mapleader has to be set before plug starts loading all
-" the plugins.
+" Space is your leader
 let mapleader = "\<Space>"
 
 " Height of menu
