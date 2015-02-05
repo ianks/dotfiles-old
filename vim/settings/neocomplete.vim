@@ -15,9 +15,6 @@ let g:neocomplete#auto_completion_start_length = 3
 " the one in rails.vim, otherwise this plugin will crap out.
 let g:neocomplete#force_overwrite_completefunc = 1
 
-" Select the first item in list automatically
-let g:neocomplete#enable_auto_select = 1
-
 " Update list as you type, if neocomplete gets slow remove this
 let g:neocomplete#enable_insert_char_pre = 1
 
