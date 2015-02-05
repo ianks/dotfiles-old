@@ -26,9 +26,6 @@ syntax on
 " Space is your leader
 let mapleader = "\<Space>"
 
-" Height of menu
-set pumheight=12
-
 " =============== plugs Initialization ===============
 " This loads all the plugins specified in ~/.vim/plugs.vim
 " Use plugs plugin to manage all other plugins
