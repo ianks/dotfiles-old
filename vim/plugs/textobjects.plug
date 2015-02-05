@@ -8,5 +8,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'thinca/vim-textobj-function-javascript', { 'for': 'javascript' }
 Plug 'vim-scripts/argtextobj.vim'
