@@ -1,10 +1,6 @@
-function! TrimWhiteSpace()
-  %s/\s\+$//e
-endfunction
+noremap <silent> <Leader>w :StripWhiteSpace<CR>
 
-noremap <silent> <Leader>w :call TrimWhiteSpace()<CR>
-
-autocmd FileWritePre    * :call TrimWhiteSpace()
-autocmd FileAppendPre   * :call TrimWhiteSpace()
-autocmd FilterWritePre  * :call TrimWhiteSpace()
-autocmd BufWritePre     * :call TrimWhiteSpace()
+autocmd FileWritePre    * :StripWhiteSpace
+autocmd FileAppendPre   * :StripWhiteSpace
+autocmd FilterWritePre  * :StripWhiteSpace
+autocmd BufWritePre     * :StripWhiteSpace
