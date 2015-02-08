@@ -1,6 +1,4 @@
-noremap <silent> <Leader>w :StripWhiteSpace<CR>
-
-autocmd FileWritePre    * :StripWhiteSpace
-autocmd FileAppendPre   * :StripWhiteSpace
-autocmd FilterWritePre  * :StripWhiteSpace
-autocmd BufWritePre     * :StripWhiteSpace
+autocmd FileWritePre    * :StripWhitespace
+autocmd FileAppendPre   * :StripWhitespace
+autocmd FilterWritePre  * :StripWhitespace
+autocmd BufWritePre     * :StripWhitespace
