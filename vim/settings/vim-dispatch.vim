@@ -1,4 +1,4 @@
-autocmd FileType markdown
+autocmd FileType mkd
       \ let b:dispatch = 'octodown %'
 autocmd FileType python
       \ let b:start = executable('ipython') ? 'ipython -i %' : 'python -i %' |
