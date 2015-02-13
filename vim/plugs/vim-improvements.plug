@@ -27,8 +27,8 @@ Plug 'vim-scripts/lastpos.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'xolox/vim-easytags'
 
-if has("nvim")
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-else
+if has("lua")
   Plug 'Shougo/neocomplete'
+else
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 endif
