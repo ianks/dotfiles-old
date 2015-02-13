@@ -22,9 +22,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/AnsiEsc.vim'
-Plug 'vim-scripts/camelcasemotion'
+Plug 'bkad/CamelCaseMotion'
 Plug 'vim-scripts/lastpos.vim'
-Plug 'vim-scripts/matchit.zip'
 Plug 'xolox/vim-easytags'
 
 if has("lua")
