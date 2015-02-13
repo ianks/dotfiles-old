@@ -32,7 +32,7 @@ let mapleader = "\<Space>"
 
 if !filereadable(expand("~/.vim/autoload/plug.vim"))
   silent !mkdir -p ~/.vim/autoload
-  silent !curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 if filereadable(expand("~/.vim/plugs.vim"))
@@ -49,7 +49,10 @@ set nowb
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 if has('persistent_undo')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  if !isdirectory($HOME.'/.vim/backups')
+    silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  endif
+
   set undodir=~/.vim/backups
   set undofile
 endif
