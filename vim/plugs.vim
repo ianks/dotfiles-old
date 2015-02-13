@@ -28,11 +28,7 @@ endif
 
 call plug#end()
 
-augroup load_us_ycm
+augroup lazy_load_ultisnips
   autocmd!
-  autocmd InsertEnter * call plug#load('ultisnips') | autocmd! load_us_ycm
+  autocmd InsertEnter * call plug#load('ultisnips') | autocmd! lazy_load_ultisnips
 augroup END
-
-"Filetype plugin indent on is required by plug
-
-filetype plugin indent on
