@@ -24,16 +24,11 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'editor' \
   'history' \
-  'directory' \
   'spectrum' \
   'utility' \
   'completion' \
-  'fasd' \
-  'archive' \
   'git' \
-  'ruby' \
   'syntax-highlighting' \
-  'history-substring-search' \
   'ssh' \
   'prompt' \
   'tmux' \
