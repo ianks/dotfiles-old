@@ -5,21 +5,12 @@ let g:easytags_include_members = 1
 let g:easytags_events = ['BufWritePost']
 
 let g:easytags_languages = {
-\   'scala': {
-\       'cmd': 'ctags',
-\       'args': [],
-\       'fileoutput_opt': '-f',
-\       'stdout_opt': '-f-',
-\       'recurse_flag': '-R'
-\   }
-\}
-
-let g:easytags_languages = {
 \   'javacript': {
 \     'cmd': 'jsctags',
 \       'args': [],
 \       'fileoutput_opt': '-f',
 \       'stdout_opt': '-f-',
-\       'recurse_flag': '-R'
+\       'recurse_flag': ''
 \   }
 \}
+
