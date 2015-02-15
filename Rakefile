@@ -142,7 +142,7 @@ def install_node_packages
   puts "======================================================"
   puts "Install Node packages"
   puts "======================================================"
-  run %{ npm install -g jshint }
+  run %{ npm install -g jshint eslint }
   puts
 end
 
@@ -164,7 +164,7 @@ def install_gems
   puts "======================================================"
   puts "Installing gems for optimized Ruby experience"
   puts "======================================================"
-  run %{ gem install pry pry-theme lunchy rubocop }
+  run %{ gem install pry pry-theme lunchy rubocop starscope }
   puts
 end
 
