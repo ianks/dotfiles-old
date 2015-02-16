@@ -142,7 +142,7 @@ definitions = {
 }
 
 mapped_apps = {
-  { key = "c", name = "Google Chrome" },
+  { key = "c", name = "Chromium" },
   { key = "i", name = "iTerm" },
   { key = "d", name = "Dash" }
 }
