@@ -164,7 +164,7 @@ def install_gems
   puts "======================================================"
   puts "Installing gems for optimized Ruby experience"
   puts "======================================================"
-  run %{ gem install pry pry-theme lunchy rubocop starscope }
+  run %{ gem install pry pry-theme lunchy rubocop ripper-tags }
   puts
 end
 
