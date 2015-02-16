@@ -46,7 +46,6 @@ alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias hpr='gpsh && hub pull-request && hub browse'
 alias grb='git recent-branches'
 
-
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
@@ -57,6 +56,7 @@ alias cl='clear'
 alias gz='tar -zcvf'
 alias ka9='killall -9'
 alias k9='kill -9'
+alias ..='cd ..'
 
 # Ruby
 alias rs='rspec spec'
