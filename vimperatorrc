@@ -26,4 +26,11 @@ map <C-a>x d
 " Reload ~/.vimperatorrc
 noremap <Leader>r :source ~/.vimperatorrc<CR>
 
+" Don't auto-start navigation in insert mode
+set gui=tabs,nonavigation
+set focuscontent
+
+" Colorscheme
+colorscheme zenburn
+
 " vim: ft=vim ts=4 sw=4 sts=0 et
