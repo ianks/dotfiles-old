@@ -1,0 +1,29 @@
+" Leader (must come before mappings)
+let mapleader='<Space>'
+
+" Basic settings
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+" Use Google
+set defsearch=google
+set suggestengines=google
+
+" Scrolling
+nnoremap j 2j
+nnoremap k 2k
+nnoremap h 2h
+nnoremap l 2l
+
+" Tmux style tabs
+map <C-a>c <C-t>
+map <C-a>n <C-Tab>
+map <C-a>p <S-C-Tab>
+map <C-a>x d
+
+" Reload ~/.vimperatorrc
+noremap <Leader>r :source ~/.vimperatorrc<CR>
+
+" vim: ft=vimperator ts=4 sw=4 sts=0 et
