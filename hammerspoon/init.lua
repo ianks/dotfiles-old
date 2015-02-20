@@ -142,7 +142,6 @@ definitions = {
 }
 
 mapped_apps = {
-  { key = "c", name = "Chromium" },
   { key = "f", name = "FirefoxDeveloperEdition" },
   { key = "i", name = "iTerm" },
   { key = "d", name = "Dash" }
