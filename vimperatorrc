@@ -1,5 +1,6 @@
 " Leader (must come before mappings)
-let mapleader = " "
+" Can't use <Space> :(
+let mapleader = ","
 
 " Basic settings
 set incsearch
@@ -24,7 +25,7 @@ map <C-a>p <S-C-Tab>
 map <C-a>x d
 
 " Reload ~/.vimperatorrc
-noremap <Leader>r :source ~/.vimperatorrc<CR>
+noremap <Leader>vr :source ~/.vimperatorrc<CR>
 
 " Don't auto-start navigation in insert mode
 set gui=tabs,nonavigation

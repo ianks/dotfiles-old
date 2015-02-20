@@ -1,4 +1,4 @@
-Plug 'chrisbra/color_highlight'
+Plug 'chrisbra/Colorizer'
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/csapprox'
 Plug 'itchyny/lightline.vim'
