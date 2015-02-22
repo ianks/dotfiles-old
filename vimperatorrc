@@ -20,8 +20,8 @@ nnoremap l 2l
 
 " Tmux style tabs
 map <C-a>c t
-map <C-a>n <C-Tab>
-map <C-a>p <S-C-Tab>
+map <C-l> :tabnext<CR>
+map <C-h> :tabprevious<CR>
 map <C-a>x d
 
 " Reload ~/.vimperatorrc
