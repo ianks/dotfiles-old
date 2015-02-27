@@ -3,8 +3,7 @@
 #
 
 tarball() {
-  tar cvzf "$1".tar.gz "$1" &> /dev/null
-  tar tf "$1".tar.gz
+  tar cvzf "$1".tar.gz "$1"
 }
 
 replace() {
@@ -23,4 +22,16 @@ replace() {
 
 whoz_blockin() {
   lsof -i tcp:"$1"
+}
+
+bak() {
+  cp "$1"{,.bak}
+}
+
+mkcd() {
+  mkdir -p "$1" && cd $_
+}
+
+rtfm() {
+  man "$@" 2> /dev/null || $BROWSER "http://www.google.com/search?q=$@" 2> /dev/null
 }

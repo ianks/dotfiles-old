@@ -43,7 +43,7 @@ alias zr='source ~/.zshrc'
 
 # Git Aliases
 alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
-alias hpr='gpsh && hub pull-request && hub browse'
+alias hpr='gpsh > /dev/null && hub pull-request && open $_'
 alias grb='git recent-branches'
 
 # Common shell functions
@@ -86,3 +86,6 @@ alias depry="ag -l 'binding.pry' | xargs sed -i '' -e '/binding.pry/d'"
 
 # Edit config
 alias yedit='vim $HOME/.yadr/'
+
+# Generate password
+alias genpw='openssl rand -base64 18'
