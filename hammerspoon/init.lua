@@ -119,7 +119,6 @@ grid.MARGINY = 0
 local gw = grid.GRIDWIDTH
 local gh = grid.GRIDHEIGHT
 
-local goMiddle = { x = 1,    y = 1, w = 4,    h = 6}
 local goLeft =   { x = 0,    y = 0, w = gw/2, h = gh}
 local goRight =  { x = gw/2, y = 0, w = gw/2, h = gh}
 local goFull =    { x = 0,    y = 0, w = gw,   h = gh}
@@ -133,18 +132,13 @@ definitions = {
   k = setGrid(goFull),
   l = setGrid(goRight),
 
-  g = applyLayout(layout2),
-
-  d = grid.pushWindowNextScreen,
   r = hs.reload,
-  q = function() appfinder.appFromName("hs"):kill() end,
   p = hints.windowHints
 }
 
 mapped_apps = {
   { key = "f", name = "FirefoxDeveloperEdition" },
-  { key = "i", name = "iTerm" },
-  { key = "d", name = "Dash" }
+  { key = "i", name = "iTerm" }
 }
 
 -- Launch our apps.
