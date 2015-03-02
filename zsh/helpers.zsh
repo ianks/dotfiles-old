@@ -25,7 +25,7 @@ whoz_blockin() {
 }
 
 bak() {
-  cp "$1"{,.bak}
+  cp -R "$1"{,.bak}
 }
 
 mkcd() {
