@@ -220,7 +220,7 @@ def install_term_theme
 
   return if color_scheme == 'None'
 
-  color_scheme_file = File.join('iTerm2', "#{color_scheme}.itermcolors")
+  color_scheme_file = File.join('iterm', "#{color_scheme}.itermcolors")
 
   # Ask the user on which profile he wants to install the theme
   profiles = iTerm_profile_list
@@ -236,7 +236,7 @@ def install_term_theme
 end
 
 def iTerm_available_themes
-   Dir['iTerm2/*.itermcolors'].map { |value| File.basename(value, '.itermcolors')} << 'None'
+   Dir['iterm/*.itermcolors'].map { |value| File.basename(value, '.itermcolors')} << 'None'
 end
 
 def iTerm_profile_list
