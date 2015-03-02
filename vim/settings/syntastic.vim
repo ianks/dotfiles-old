@@ -19,7 +19,7 @@ let g:syntastic_style_warning_symbol = "⚠"
 " Syntax checkers
 let g:syntastic_ruby_checkers=['rubocop', 'mri']
 let g:syntastic_python_checkers=['pep8', 'pylint', 'python']
-let g:syntastic_javascript_checkers=['jshint', 'eslint']
+let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_scala_checkers=['scalac', 'scalastyle']
 let g:syntastic_java_checkers=['javac', 'checkstyle']
 
