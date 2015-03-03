@@ -23,7 +23,9 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('langs/javascript/*')) if want_to_install?('eslint etc.')
   file_operation(Dir.glob('cli/ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   file_operation(Dir.glob('cli/tmux/*')) if want_to_install?('tmux config')
-  file_operation(Dir.glob('vimify/*')) if want_to_install?('vimperator, vim CLI tools, etc')
+  file_operation(Dir.glob('cli/editline/*')) if want_to_install?('VIM settings for editline')
+  file_operation(Dir.glob('cli/readline/*')) if want_to_install?('VIM settings for readline')
+  file_operation(Dir.glob('apps/firefox/*')) if want_to_install?('Enhancements for firefox')
 
   if want_to_install?('Hammerspoon (OSX scripting)')
     return unless RUBY_PLATFORM.include? 'darwin'
