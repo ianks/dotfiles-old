@@ -234,7 +234,7 @@ def install_term_theme
 end
 
 def iTerm_available_themes
-   Dir['app/iterm/*.itermcolors'].map { |value| File.basename(value, '.itermcolors')} << 'None'
+   Dir['apps/iterm/*.itermcolors'].map { |value| File.basename(value, '.itermcolors')} << 'None'
 end
 
 def iTerm_profile_list
