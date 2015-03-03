@@ -18,9 +18,9 @@ task :install => [:submodule_init, :submodules] do
   # this has all the runcoms from this directory.
   file_operation(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
   file_operation(Dir.glob('ag/*')) if want_to_install?('ag configs (sane ag options for searching)')
-  file_operation(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs), pry config')
-  file_operation(Dir.glob('python/*')) if want_to_install?('pylint etc.')
-  file_operation(Dir.glob('javascript/*')) if want_to_install?('eslint etc.')
+  file_operation(Dir.glob('langs/ruby/*')) if want_to_install?('rubygems config (faster/no docs), pry config')
+  file_operation(Dir.glob('langs/python/*')) if want_to_install?('pylint etc.')
+  file_operation(Dir.glob('langs/javascript/*')) if want_to_install?('eslint etc.')
   file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimperator, vim CLI tools, etc')
@@ -147,7 +147,7 @@ end
 
 def install_python_packages
   return unless system('which pip')
-  return unless system('pip3')
+  return unless system('which pip3')
 
   puts "======================================================"
   puts "Install Python packages"
