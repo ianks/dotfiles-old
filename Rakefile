@@ -265,15 +265,15 @@ def install_prezto
   puts
   puts "Installing Prezto (ZSH Enhancements)..."
 
-  run %{ ln -nfs "$HOME/.yadr/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
+  run %{ ln -nfs "$HOME/.yadr/cli/zsh/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
 
   # The prezto runcoms are only going to be installed if zprezto has never been installed
-  file_operation(Dir.glob('zsh/prezto/runcoms/z*'), :copy)
+  file_operation(Dir.glob('cli/zsh/prezto/runcoms/z*'), :copy)
 
   puts
   puts "Adding zprezto modules and bug-fixes..."
-  run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" }
-  run %{ ln -nfs "$HOME/.yadr/zsh/prezto-override/zprofile" "${ZDOTDIR:-$HOME}/.zprofile" }
+  run %{ ln -nfs "$HOME/.yadr/cli/zsh/prezto-override/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" }
+  run %{ ln -nfs "$HOME/.yadr/cli/zsh/prezto-override/zprofile" "${ZDOTDIR:-$HOME}/.zprofile" }
 
   puts
   puts "Creating directories for your customizations"
@@ -332,7 +332,7 @@ def file_operation(files, method = :symlink)
     # Eventually yadr's zsh extensions should be ported to prezto modules.
     if file == 'zshrc'
       File.open(target, 'a') do |zshrc|
-        zshrc.puts('for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file')
+        zshrc.puts('for config_file ($HOME/.yadr/cli/zsh/*.zsh) source $config_file')
       end
     end
 
