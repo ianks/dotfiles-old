@@ -25,7 +25,9 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('cli/tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimperator, vim CLI tools, etc')
 
-  if RUBY_PLATFORM.downcase.include? 'darwin' && want_to_install?('Hammerspoon (OSX scripting)')
+  if want_to_install?('Hammerspoon (OSX scripting)')
+    return unless RUBY_PLATFORM.include? 'darwin'
+
     file_operation(Dir.glob('apps/hammerspoon'))
 
     run %{brew install lua luarocks}
@@ -232,7 +234,7 @@ def install_term_theme
 end
 
 def iTerm_available_themes
-   Dir['iterm/*.itermcolors'].map { |value| File.basename(value, '.itermcolors')} << 'None'
+   Dir['app/iterm/*.itermcolors'].map { |value| File.basename(value, '.itermcolors')} << 'None'
 end
 
 def iTerm_profile_list
