@@ -13,7 +13,7 @@ vim/plugged
 vim/autoload
 vim/sessions
 
-vimperator/info
+vimify/vimperator/info
 
 .netrwhist
 bin/subl
