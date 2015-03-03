@@ -23,7 +23,7 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('javascript/*')) if want_to_install?('eslint etc.')
   file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
-  file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
+  file_operation(Dir.glob('vimify/*')) if want_to_install?('vimperator, vim CLI tools, etc')
 
   if want_to_install?('Hammerspoon (OSX window managing/scripting)')
     if RUBY_PLATFORM.downcase.include? 'darwin'
@@ -35,7 +35,6 @@ task :install => [:submodule_init, :submodules] do
   end
 
   if want_to_install?('vim configuration (highly recommended)')
-    file_operation Dir['vim', 'vimrc', 'vimperator', 'vimperatorrc']
     Rake::Task["install_plug"].execute
   end
 
