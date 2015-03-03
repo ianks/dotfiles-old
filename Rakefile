@@ -25,13 +25,11 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimperator, vim CLI tools, etc')
 
-  if want_to_install?('Hammerspoon (OSX window managing/scripting)')
-    if RUBY_PLATFORM.downcase.include? 'darwin'
-      file_operation(Dir.glob('hammerspoon'))
+  if RUBY_PLATFORM.downcase.include? 'darwin' && want_to_install?('Hammerspoon (OSX scripting)')
+    file_operation(Dir.glob('apps/hammerspoon'))
 
-      run %{brew install lua luarocks}
-      run %{echo 'rocks_servers = { "http://rocks.moonscript.org" }' > ~/.luarocks/config.lua}
-    end
+    run %{brew install lua luarocks}
+    run %{echo 'rocks_servers = { "http://rocks.moonscript.org" }' > ~/.luarocks/config.lua}
   end
 
   if want_to_install?('vim configuration (highly recommended)')
@@ -218,7 +216,7 @@ def install_term_theme
 
   return if color_scheme == 'None'
 
-  color_scheme_file = File.join('iterm', "#{color_scheme}.itermcolors")
+  color_scheme_file = File.join('apps/iterm', "#{color_scheme}.itermcolors")
 
   # Ask the user on which profile he wants to install the theme
   profiles = iTerm_profile_list
