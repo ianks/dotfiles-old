@@ -28,8 +28,8 @@ alias day='date +%Y-%m-%d'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='$EDITOR $yadr/zsh/aliases.zsh' #alias edit
-alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
+alias ae='$EDITOR $yadr/cli/zsh/aliases.zsh' #alias edit
+alias ar='source $yadr/cli/zsh/aliases.zsh'  #alias reload
 
 # mimic vim functions
 alias :q='exit'
