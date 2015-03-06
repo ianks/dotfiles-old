@@ -12,6 +12,8 @@ vim/.plugs.local.bak
 vim/plugged
 vim/autoload
 vim/sessions
+vim/eclim
+vim/plugin
 
 apps/firefox/vimperator/info
 

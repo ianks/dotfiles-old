@@ -24,8 +24,4 @@ Plug 'vim-scripts/lastpos.vim'
 Plug 'xolox/vim-easytags'
 Plug 'editorconfig/editorconfig-vim'
 
-if has("lua")
-  Plug 'Shougo/neocomplete'
-else
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-endif
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
