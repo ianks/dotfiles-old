@@ -8,7 +8,7 @@ hs.window.animationDuration = 0
 
 
 --== Mashing ==--
-local mashWin = { 'fn',    'ctrl', 'alt' }
+local mashWin = { 'ctrl', 'alt' }
 local mashApp = { 'ctrl',  'alt',  'cmd' }
 
 
