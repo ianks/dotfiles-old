@@ -37,6 +37,7 @@ task :install => [:submodule_init, :submodules] do
   end
 
   if want_to_install?('vim configuration (highly recommended)')
+    file_operation(Dir.glob('editors/{,n}vim'))
     Rake::Task["install_plug"].execute
   end
 

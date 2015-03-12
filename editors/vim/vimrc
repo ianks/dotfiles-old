@@ -86,4 +86,4 @@ set sidescroll=1
 set scrolloff=8
 
 " ================ Custom Settings ========================
-so ~/.yadr/vim/settings.vim
+so ~/.yadr/editors/vim/settings.vim

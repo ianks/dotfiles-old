@@ -1,19 +1,19 @@
 custom/zsh
 
-vim/backups
-vim/view
+editor/vim/backups
+editor/vim/view
 *un~
-vim/.netrwhist
-vim/tmp
-vim/spell
-vim/after/.vimrc.after
-vim/.plugs.local
-vim/.plugs.local.bak
-vim/plugged
-vim/autoload
-vim/sessions
-vim/eclim
-vim/plugin
+editor/vim/.netrwhist
+editor/vim/tmp
+editor/vim/spell
+editor/vim/after/.vimrc.after
+editor/vim/.plugs.local
+editor/vim/.plugs.local.bak
+editor/vim/plugged
+editor/vim/autoload
+editor/vim/sessions
+editor/vim/eclim
+editor/vim/plugin
 
 apps/firefox/vimperator/info
 
