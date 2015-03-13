@@ -4,3 +4,4 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
+Plug 'justinmk/vim-syntax-extra'
