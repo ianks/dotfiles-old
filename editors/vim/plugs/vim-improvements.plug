@@ -1,5 +1,5 @@
 Plug 'Keithbsmiley/investigate.vim'
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips', { 'on': [] }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
