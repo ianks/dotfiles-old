@@ -5,7 +5,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
 Plug 'mattn/webapi-vim'
 Plug 'sjl/gundo.vim'
-Plug 'skwp/YankRing.vim'
 Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -23,5 +22,9 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'vim-scripts/lastpos.vim'
 Plug 'xolox/vim-easytags'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/vimfiler.vim'
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
