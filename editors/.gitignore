@@ -1,0 +1,16 @@
+vim/*.swp
+vim/*~
+vim/.VimballRecord
+vim/.netrwhist
+vim/.plugs.local
+vim/.plugs.local.bak
+vim/after/
+vim/autoload/
+vim/backups/
+vim/eclim/
+vim/plugged/
+vim/plugin/
+vim/sessions/
+vim/tags
+vim/view
+vim/yankring.txt

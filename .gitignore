@@ -1,23 +1,4 @@
-custom/zsh
-
-editor/vim/backups
-editor/vim/view
 *un~
-editor/vim/.netrwhist
-editor/vim/tmp
-editor/vim/spell
-editor/vim/after/.vimrc.after
-editor/vim/.plugs.local
-editor/vim/.plugs.local.bak
-editor/vim/plugged
-editor/vim/autoload
-editor/vim/sessions
-editor/vim/eclim
-editor/vim/plugin
 
-apps/firefox/vimperator/info
-
-.netrwhist
 bin/subl
 tags
-target/*
