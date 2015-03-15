@@ -21,6 +21,7 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('langs/ruby/*')) if want_to_install?('rubygems config (faster/no docs), pry config')
   file_operation(Dir.glob('langs/python/*')) if want_to_install?('pylint etc.')
   file_operation(Dir.glob('langs/javascript/*')) if want_to_install?('eslint etc.')
+  file_operation(       %w(langs/markdown/mdlrc)) if want_to_install?('markdown lint etc.')
   file_operation(Dir.glob('cli/ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   file_operation(Dir.glob('cli/tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('cli/editline/*')) if want_to_install?('VIM settings for editline')
