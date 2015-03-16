@@ -70,12 +70,7 @@ nnoremap <leader>. '.
 "
 " the first quote will autoclose so you'll get 'foo' and hitting <c-j> will
 " put the cursor right after the quote
-imap <C-j> <esc>wa
-
-" <leader>q to toggle quickfix window (where you have stuff like Ag)
-" <leader>oq to open it back up (rare)
-nmap <silent> <leader>qc :cclose<CR>
-nmap <silent> <leader>qo :copen<CR>
+imap <C-j> <esc>ea
 
 " ============================
 " Shortcuts for everyday tasks
