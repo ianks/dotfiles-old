@@ -84,7 +84,7 @@ nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
 nmap <silent> // :nohlsearch<CR>
 
 "(v)im (r)eload
-nmap <silent> <leader>vr :so %<CR>
+nmap <silent> <leader>vr :so $MYVIMRC<CR>
 
 " Type <leader>hl to toggle highlighting on/off, and show current value.
 noremap <leader>hl :set hlsearch! hlsearch?<CR>
