@@ -81,5 +81,10 @@ set wildignore+=*.pdf
 set sidescroll=1
 set scrolloff=8
 
+" ================ Splitting ========================
+
+set splitbelow
+set splitright
+
 " ================ Custom Settings ========================
 so ~/.yadr/editors/vim/settings.vim

@@ -26,5 +26,5 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/vimfiler.vim'
-
+Plug 'roman/golden-ratio'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
