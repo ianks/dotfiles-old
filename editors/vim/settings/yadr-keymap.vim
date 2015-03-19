@@ -6,6 +6,12 @@
 " Stop using ESC!
 imap jk <Esc>
 
+" Stop pressing shift all the time
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 " alias yw to yank the entire word 'yank inner word'
 " even if the cursor is halfway inside the word
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
