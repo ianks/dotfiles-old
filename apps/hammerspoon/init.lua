@@ -8,7 +8,7 @@ hs.window.animationDuration = 0
 
 
 --== mash ==--
-local mash = { 'ctrl', 'space' }
+local mash = { 'ctrl', 'alt' }
 
 --== Applications ==--
 local function launchOrFocus(app)
