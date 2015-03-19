@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Forward Delete Key</name>
+    <item>
+      <name>Forward Delete to Tab</name>
+      <identifier>remap.forwarddelete2tab</identifier>
+      <autogen>__KeyToKey__ FROMKEYCODE_FORWARD_DELETE, KeyCode::TAB</autogen>
+    </item>
+  </item>
+</root>
