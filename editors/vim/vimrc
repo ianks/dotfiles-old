@@ -88,3 +88,9 @@ set splitright
 
 " ================ Custom Settings ========================
 so ~/.yadr/editors/vim/settings.vim
+
+
+" ================ Override ========================
+if filereadable(expand("~/.vimrc.after"))
+  source ~/.vimrc.after
+endif

@@ -9,7 +9,7 @@ hs.window.animationDuration = 0
 
 --== Mashing ==--
 local mashWin = { 'ctrl', 'alt' }
-local mashApp = { 'ctrl',  'alt',  'cmd' }
+local mashApp = { 'ctrl',  'alt' }
 
 
 --== Applications ==--
@@ -20,14 +20,6 @@ end
 hs.hotkey.bind(mashApp, 'i', function () launchOrFocus('iTerm') end)
 hs.hotkey.bind(mashApp, 'f', function () launchOrFocus('FirefoxDeveloperEdition') end)
 hs.hotkey.bind(mashApp, 'r', function () hs.reload() end)
-
-
---== Windowing ==--
-hs.hotkey.bind(mashApp, 'h', function() hs.window.focusedWindow():focusWindowWest() end)
-hs.hotkey.bind(mashApp, 'l', function() hs.window.focusedWindow():focusWindowEast() end)
-hs.hotkey.bind(mashApp, 'k', function() hs.window.focusedWindow():focusWindowNorth() end)
-hs.hotkey.bind(mashApp, 'j', function() hs.window.focusedWindow():focusWindowSouth() end)
-
 hs.hotkey.bind(mashApp, 'd', function() hs.window.focusedWindow():close() end)
 
 
