@@ -7,25 +7,24 @@ hs.grid.GRIDHEIGHT = 1
 hs.window.animationDuration = 0
 
 
---== Mashing ==--
-local mashWin = { 'ctrl', 'alt' }
-local mashApp = { 'ctrl',  'alt' }
-
+--== mash ==--
+local mash = { 'ctrl', 'space' }
 
 --== Applications ==--
 local function launchOrFocus(app)
   return hs.application.launchOrFocus(app)
 end
 
-hs.hotkey.bind(mashApp, 'i', function () launchOrFocus('iTerm') end)
-hs.hotkey.bind(mashApp, 'f', function () launchOrFocus('FirefoxDeveloperEdition') end)
-hs.hotkey.bind(mashApp, 'r', function () hs.reload() end)
-hs.hotkey.bind(mashApp, 'd', function() hs.window.focusedWindow():close() end)
+hs.hotkey.bind(mash, 'i', function () launchOrFocus('iTerm') end)
+hs.hotkey.bind(mash, 'f', function () launchOrFocus('FirefoxDeveloperEdition') end)
+
+hs.hotkey.bind(mash, 'r', function () hs.reload() end)
+hs.hotkey.bind(mash, 'd', function() hs.window.focusedWindow():close() end)
 
 
 --== Multi-monitor ==--
-hs.hotkey.bind(mashWin, 'N', hs.grid.pushWindowNextScreen)
-hs.hotkey.bind(mashWin, 'P', hs.grid.pushWindowPrevScreen)
+hs.hotkey.bind(mash, 'left',  hs.grid.pushWindowNextScreen)
+hs.hotkey.bind(mash, 'right', hs.grid.pushWindowPrevScreen)
 
 
 --== Grid snapping ==--
@@ -33,13 +32,13 @@ local function snapFocusedWindow(layout)
   hs.grid.set(hs.window.focusedWindow(), layout, hs.screen.mainScreen())
 end
 
-hs.hotkey.bind(mashWin, 'h', function() snapFocusedWindow(hs.layout.left50) end)
-hs.hotkey.bind(mashWin, 'l', function() snapFocusedWindow(hs.layout.right50) end)
-hs.hotkey.bind(mashWin, 'k', function() snapFocusedWindow(hs.layout.maximized) end)
+hs.hotkey.bind(mash, 'h',  function() snapFocusedWindow(hs.layout.left50) end)
+hs.hotkey.bind(mash, 'l', function() snapFocusedWindow(hs.layout.right50) end)
+hs.hotkey.bind(mash, 'k',    function() snapFocusedWindow(hs.layout.maximized) end)
 
 
 --== Hints ==--
-hs.hotkey.bind(mashWin, '.', hs.hints.windowHints)
+hs.hotkey.bind(mash, ';', hs.hints.windowHints)
 
 
 --== Welcome ==--
