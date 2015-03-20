@@ -7,24 +7,23 @@ hs.grid.GRIDHEIGHT = 1
 hs.window.animationDuration = 0
 
 
---== mash ==--
-local mash = { 'ctrl', 'alt' }
-
 --== Applications ==--
 local function launchOrFocus(app)
   return hs.application.launchOrFocus(app)
 end
 
-hs.hotkey.bind(mash, 'i', function () launchOrFocus('iTerm') end)
-hs.hotkey.bind(mash, 'f', function () launchOrFocus('FirefoxDeveloperEdition') end)
+k = hs.hotkey.modal.new({"ctrl"}, "space")
 
-hs.hotkey.bind(mash, 'r', function () hs.reload() end)
-hs.hotkey.bind(mash, 'd', function() hs.window.focusedWindow():close() end)
+k:bind({}, 'i', function() launchOrFocus('iTerm') end, function() k:exit() end)
+k:bind({}, 'f', function() launchOrFocus('FirefoxDeveloperEdition') end, function() k:exit() end)
+
+k:bind({}, 'r', function() hs.reload() end, function() k:exit() end)
+k:bind({}, 'd', function() hs.window.focusedWindow():close() end, function() k:exit() end)
 
 
 --== Multi-monitor ==--
-hs.hotkey.bind(mash, 'left',  hs.grid.pushWindowNextScreen)
-hs.hotkey.bind(mash, 'right', hs.grid.pushWindowPrevScreen)
+k:bind({}, 'left', function() hs.grid.pushWindowNextScreen() end, function() k:exit() end)
+k:bind({}, 'right', function() hs.grid.pushWindowPrevScreen() end, function() k:exit() end)
 
 
 --== Grid snapping ==--
@@ -32,13 +31,13 @@ local function snapFocusedWindow(layout)
   hs.grid.set(hs.window.focusedWindow(), layout, hs.screen.mainScreen())
 end
 
-hs.hotkey.bind(mash, 'h',  function() snapFocusedWindow(hs.layout.left50) end)
-hs.hotkey.bind(mash, 'l', function() snapFocusedWindow(hs.layout.right50) end)
-hs.hotkey.bind(mash, 'k',    function() snapFocusedWindow(hs.layout.maximized) end)
+k:bind({}, 'h', function() snapFocusedWindow(hs.layout.left50) end, function() k:exit() end)
+k:bind({}, 'l', function() snapFocusedWindow(hs.layout.right50) end, function() k:exit() end)
+k:bind({}, 'k', function() snapFocusedWindow(hs.layout.maximized) end, function() k:exit() end)
 
 
 --== Hints ==--
-hs.hotkey.bind(mash, ';', hs.hints.windowHints)
+-- k:bind({}, ';', function() hs.hints.windowHints() end, function() k:exit() end)
 
 
 --== Welcome ==--
