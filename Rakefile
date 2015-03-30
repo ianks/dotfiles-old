@@ -28,8 +28,7 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('cli/readline/*')) if want_to_install?('VIM settings for readline')
   file_operation(Dir.glob('apps/firefox/*')) if want_to_install?('Enhancements for firefox')
 
-  if want_to_install?('Hammerspoon (OSX scripting)')
-    return unless RUBY_PLATFORM.include? 'darwin'
+  if want_to_install?('Hammerspoon (OSX scripting)') && RUBY_PLATFORM.include?('darwin')
 
     file_operation(Dir.glob('apps/hammerspoon'))
 

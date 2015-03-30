@@ -10,15 +10,15 @@ let g:lightline = {
       \   'filename': 'MyFilename',
       \   'modified': 'MyModified',
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'right': '', 'left': '' },
+      \ 'subseparator': { 'right': '', 'left': '' }
       \ }
 
 function! MyReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "⭤ "
+    return " "
   else
     return ""
   endif
@@ -27,7 +27,7 @@ endfunction
 function! MyFugitive()
   if exists("*fugitive#head")
     let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
+    return strlen(_) ? ' ' : ''
   endif
   return ''
 endfunction
