@@ -12,20 +12,12 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-" alias yw to yank the entire word 'yank inner word'
-" even if the cursor is halfway inside the word
-" FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
-nnoremap <leader>yw yiww
-
-" <leader>ow = 'overwrite word', replace a word with what's in the yank buffer
-" FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
-nnoremap <leader>ow "_diwh"+p
-
 "make Y consistent with C and D
 nnoremap Y y$
 function! YRRunAfterMaps()
   nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
 endfunction
+
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
 " interested in working with text rather than empty space. If
@@ -34,33 +26,33 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 " <leader># Surround a word with #{ruby interpolation}
-map <leader># ysiW#
+nmap <leader># ysiW#
 vmap <leader># c#{<C-R>"}<ESC>
 
 " <leader>" Surround a word with "quotes"
-map <leader>" ysiW"
+nmap <leader>" ysiW"
 vmap <leader>" c"<C-R>""<ESC>
 
 " <leader>' Surround a word with 'single quotes'
-map <leader>' ysiW'
+noremap <leader>' ysiW'
 vmap <leader>' c'<C-R>"'<ESC>
 
 " <leader>) or ,( Surround a word with (parens)
 " The difference is in whether a space is put in
-map <leader>( ysiW(
-map <leader>) ysiW)
+nmap <leader>( ysiW(
+nmap <leader>) ysiW)
 vmap <leader>( c( <C-R>" )<ESC>
 vmap <leader>) c(<C-R>")<ESC>
 
 " <leader>[ Surround a word with [brackets]
-map <leader>] ysiW]
-map <leader>[ ysiW[
+nmap <leader>] ysiW]
+nmap <leader>[ ysiW[
 vmap <leader>[ c[ <C-R>" ]<ESC>
 vmap <leader>] c[<C-R>"]<ESC>
 
 " <leader>{ Surround a word with {braces}
-map <leader>} ysiW}
-map <leader>{ ysiW{
+noremap <leader>} ysiW}
+noremap <leader>{ ysiW{
 vmap <leader>} c{ <C-R>" }<ESC>
 vmap <leader>{ c{<C-R>"}<ESC>
 
@@ -82,15 +74,11 @@ imap <C-j> <esc>ea
 " Shortcuts for everyday tasks
 " ============================
 
-" copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
-" this is helpful to paste someone the path you're looking at
-nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
-
 "Clear current search highlight by double tapping //
-nmap <silent> // :nohlsearch<CR>
+nnoremap // :nohlsearch<CR>
 
 "(v)im (r)eload
-nmap <silent> <leader>vr :so $MYVIMRC<CR>
+nnoremap <leader>vr :so $MYVIMRC<CR>
 
 " Type <leader>hl to toggle highlighting on/off, and show current value.
 noremap <leader>hl :set hlsearch! hlsearch?<CR>
@@ -105,8 +93,3 @@ nnoremap ` '
 
 " Re-run last shell command
 nnoremap <leader>rr :!!<CR>
-
-" Now using the middle finger of either hand you can type
-" underscores with apple-k
-imap <silent> <C-k> _
-imap <silent> <C-l> -
