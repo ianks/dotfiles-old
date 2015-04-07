@@ -30,11 +30,18 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('apps/i3')) if want_to_install?('i3 window manager configuration')
 
   if want_to_install?('Hammerspoon (OSX scripting)') && RUBY_PLATFORM.include?('darwin')
-
     file_operation(Dir.glob('apps/hammerspoon'))
 
     run %{brew install lua luarocks}
     run %{echo 'rocks_servers = { "http://rocks.moonscript.org" }' > ~/.luarocks/config.lua}
+  end
+
+  if want_to_install? 'touchegg (multitouch for Linux tablets)'
+    FileUtils.mkdir_p File.join ENV['HOME'], '.config', 'touchegg'
+    FileUtils.ln_sf(
+      File.join(ENV['HOME'], '.yadr', 'apps', 'touchegg', 'touchegg.conf'),
+      File.join(ENV['HOME'], '.config', 'touchegg', 'touchegg.conf')
+    )
   end
 
   if want_to_install?('vim configuration (highly recommended)')
@@ -284,21 +291,6 @@ def install_prezto
   run %{ mkdir -p $HOME/.zsh.before }
   run %{ mkdir -p $HOME/.zsh.after }
   run %{ mkdir -p $HOME/.zsh.prompts }
-
-  if ENV["SHELL"].include? 'zsh' then
-    puts "Zsh is already configured as your shell of choice. Restart your session to load the new settings"
-  else
-    puts "Setting zsh as your default shell"
-
-    if RUBY_PLATFORM.downcase.include?("darwin")
-      if File.readlines("/private/etc/shells").grep("/usr/local/bin/zsh").empty?
-        puts "Adding zsh to standard shell list"
-        run %{ echo "/usr/local/bin/zsh" | sudo tee -a /private/etc/shells }
-      end
-    end
-
-    run %{ chsh -s #{`which zsh`} }
-  end
 end
 
 def want_to_install? (section)
