@@ -27,22 +27,34 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('cli/editline/*')) if want_to_install?('VIM settings for editline')
   file_operation(Dir.glob('cli/readline/*')) if want_to_install?('VIM settings for readline')
   file_operation(Dir.glob('apps/firefox/*')) if want_to_install?('Enhancements for firefox')
-  file_operation(Dir.glob('apps/i3')) if want_to_install?('i3 window manager configuration')
-  file_operation(Dir.glob('apps/xorg/*')) if want_to_install?('Xorg configuration')
 
-  if want_to_install?('Hammerspoon (OSX scripting)') && RUBY_PLATFORM.include?('darwin')
-    file_operation(Dir.glob('apps/hammerspoon'))
+  if RUBY_PLATFORM.include? 'darwin'
+    if want_to_install?('Hammerspoon (OSX scripting)')
+        file_operation(Dir.glob('apps/hammerspoon'))
 
-    run %{brew install lua luarocks}
-    run %{echo 'rocks_servers = { "http://rocks.moonscript.org" }' > ~/.luarocks/config.lua}
+      run %{brew install lua luarocks}
+      run %{echo 'rocks_servers = { "http://rocks.moonscript.org" }' > ~/.luarocks/config.lua}
+    end
   end
 
-  if want_to_install? 'touchegg (multitouch for Linux tablets)'
-    FileUtils.mkdir_p File.join ENV['HOME'], '.config', 'touchegg'
-    FileUtils.ln_sf(
-      File.join(ENV['HOME'], '.yadr', 'apps', 'touchegg', 'touchegg.conf'),
-      File.join(ENV['HOME'], '.config', 'touchegg', 'touchegg.conf')
-    )
+  if RUBY_PLATFORM.include? 'linux'
+    if want_to_install? 'touchegg (multitouch for Linux tablets)'
+      FileUtils.mkdir_p File.join ENV['HOME'], '.config', 'touchegg'
+      FileUtils.ln_sf(
+        File.join(ENV['HOME'], '.yadr', 'apps', 'touchegg', 'touchegg.conf'),
+        File.join(ENV['HOME'], '.config', 'touchegg', 'touchegg.conf')
+      )
+    end
+
+    if want_to_install? 'compton: composite window manager for Linux'
+      FileUtils.ln_sf(
+        File.join(ENV['HOME'], '.yadr', 'apps', 'compton', 'compton.conf'),
+        File.join(ENV['HOME'], '.config', 'compton.conf')
+      )
+    end
+
+    file_operation(Dir.glob('apps/i3')) if want_to_install?('i3 window manager configuration')
+    file_operation(Dir.glob('apps/xorg/*')) if want_to_install?('Xorg configuration')
   end
 
   if want_to_install?('vim configuration (highly recommended)')
