@@ -2,11 +2,11 @@
 #
 # User guide: http://i3wm.org/docs/userguide.html
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Consolas 14
+font pango:Consolas 16
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -130,28 +130,17 @@ mode  $power_control {
 bindsym $mod+n mode $power_control
 
 # Audio controls (volume up, volume down, toggle mute)
-bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/pulseaudio-ctl up 8 && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/pulseaudio-ctl down  8 && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec /usr/bin/pulseaudio-ctl mute && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up 8 && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down  8 && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec pulseaudio-ctl mute && killall -SIGUSR1 i3status
 
 # Sreen brightness controls (brightness up, brightness down)
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && killall -SIGUSR1 i3status
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && killall -SIGUSR1 i3status
+bindsym XF86HomePage exec xbacklight -inc 5 && killall -SIGUSR1 i3status
+bindsym XF86Mail exec xbacklight -dec 5 && killall -SIGUSR1 i3status
 
 # Printscreen saves screenshot (with shift only focused window)
 bindsym --release Print exec --no-startup-id scrot
 bindsym --release Shift+Print exec --no-startup-id scrot -u
-
-# Set borders
-for_window [class="^.*"] border pixel 2
-gaps inner 12
-smart_borders no_gaps
-
-# Resize gaps
-bindsym $mod+y gaps inner current minus 6
-bindsym $mod+u gaps inner current plus 6
-bindsym $mod+Shift+y gaps outer current minus 6
-bindsym $mod+Shift+u gaps outer current plus 6
 
 # class                 border  backgr. text    indicator
 client.focused          #5f865f #5f865f #d8af5f #5f865f
@@ -159,15 +148,17 @@ client.unfocused        #3a3a3a #3a3a3a #d8af5f #3a3a3a
 client.focused_inactive #3a3a3a #333333 #d8af5f #3a3a3a
 client.urgent           #383a3b #383a3b #ee0000 #383a3b
 
+# Compositor
+exec --no-startup-id compton --config ~/.config/compton.conf
+
 # Audio
 exec --no-startup-id start-pulseaudio-x11
 
-# Applets
-exec --no-startup-id twmnd # notifications
-exec --no-startup-id udiskie --smart-tray # usb storage automounter
+# Notifications
+exec --no-startup-id twmnd
 
-# Compositor
-exec compton -bc -r 3 -l -4 -t -4 --shadow-exclude '_GTK_FRAME_EXTENTS@:c' --clear-shadow
+# USB automounter
+exec --no-startup-id udiskie --smart-tray
 
 # Wallpaper
 exec feh --bg-fill /home/ianks/Dropbox/Pictures/nights-notes.jpg
@@ -177,7 +168,7 @@ exec feh --bg-fill /home/ianks/Dropbox/Pictures/nights-notes.jpg
 bar {
     status_command ~/.i3/i3status_wrapper.sh
     position top
-    font pango:Consolas, FontAwesome 14
+    font pango:Consolas, FontAwesome 16
 
     colors {
          background #3a3a3a
