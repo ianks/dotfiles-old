@@ -24,9 +24,19 @@ let g:syntastic_scala_checkers=['scalac', 'scalastyle']
 let g:syntastic_java_checkers=['javac', 'checkstyle']
 
 " scalastyle
-let g:syntastic_scala_scalastyle_jar='/usr/local/Cellar/scalastyle/0.6.0/libexec/scalastyle_2.10-0.6.0-batch.jar'
+if filereadable('/usr/local/Cellar/scalastyle/0.6.0/libexec/scalastyle_2.10-0.6.0-batch.jar')
+  let g:syntastic_scala_scalastyle_jar='/usr/local/Cellar/scalastyle/0.6.0/libexec/scalastyle_2.10-0.6.0-batch.jar'
+elseif filereadable('/usr/share/java/scalastyle/scalastyle-batch_2.10.jar')
+  let g:syntastic_scala_scalastyle_jar='/usr/share/java/scalastyle/scalastyle-batch_2.10.jar'
+endif
+
 let g:syntastic_scala_scalastyle_config_file='~/.yadr/scala/scalastyle.xml'
 
 " checkstyle
-let g:syntastic_java_checkstyle_classpath='/usr/local/Cellar/checkstyle/6.2/libexec/checkstyle-6.2-all.jar'
+if filereadable('/usr/local/Cellar/checkstyle/6.2/libexec/checkstyle-6.2-all.jar')
+  let g:syntastic_java_checkstyle_classpath='/usr/local/Cellar/checkstyle/6.2/libexec/checkstyle-6.2-all.jar'
+elseif filereadable('/opt/checkstyle/checkstyle-5.9-all.jar')
+  let g:syntastic_java_checkstyle_classpath='/opt/checkstyle/checkstyle-5.9-all.jar'
+endif
+
 let g:syntastic_java_checkstyle_conf_file='~/.yadr/java/checkstyle.xml'
