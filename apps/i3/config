@@ -1,7 +1,4 @@
-# i3 config file
-#
-# User guide: http://i3wm.org/docs/userguide.html
-
+# Main mod key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -33,16 +30,16 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+s split h
+bindsym $mod+s split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split s
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
+bindsym $mod+t layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -129,14 +126,14 @@ mode  $power_control {
 }
 bindsym $mod+n mode $power_control
 
-# Audio controls (volume up, volume down, toggle mute)
-bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up 8 && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down  8 && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec pulseaudio-ctl mute && killall -SIGUSR1 i3status
+# Sceen brightness controls (brightness up, brightness down)
+bindsym XF86HomePage exec xbacklight -inc 5 && pkill -RTMIN+1 i3blocks
+bindsym XF86Mail exec xbacklight -dec 5 && pkill -RTMIN+1 i3blocks
 
-# Sreen brightness controls (brightness up, brightness down)
-bindsym XF86HomePage exec xbacklight -inc 5 && killall -SIGUSR1 i3status
-bindsym XF86Mail exec xbacklight -dec 5 && killall -SIGUSR1 i3status
+# Audio controls (volume up, volume down, toggle mute)
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up 8 && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down 8 && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioMute exec pulseaudio-ctl mute && killall -SIGUSR1 i3status
 
 # Printscreen saves screenshot (with shift only focused window)
 bindsym --release Print exec --no-startup-id scrot
@@ -166,19 +163,20 @@ exec feh --bg-fill /home/ianks/Dropbox/Pictures/nights-notes.jpg
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command ~/.i3/i3status_wrapper.sh
+    # status_command ~/.i3/i3status_wrapper.sh
+    status_command i3blocks
     position top
     font pango:Consolas, FontAwesome 16
 
     colors {
-         background #3a3a3a
-         statusline #d0d0d0
+         background #333333
+         statusline #e4e4e4
          separator #e4e4e4
 
                             #border backgr. text
-         focused_workspace  #87afaf #87afaf #d0d0d0
+         focused_workspace  #87afaf #87afaf #e4e4e4
          active_workspace   #3a3a3a #626262 #ffd787
          inactive_workspace #3a3a3a #4a4a4a #888888
-         urgent_workspace   #333333 #900000 #ffffff
+         urgent_workspace   #d68787 #d68787 #333333
     }
 }

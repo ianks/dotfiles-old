@@ -54,6 +54,7 @@ task :install => [:submodule_init, :submodules] do
     end
 
     file_operation(Dir.glob('apps/i3')) if want_to_install?('i3 window manager configuration')
+    file_operation(Dir.glob('apps/i3/i3blocks/*')) if want_to_install?('i3 blocks')
     file_operation(Dir.glob('apps/xorg/*')) if want_to_install?('Xorg configuration')
   end
 
