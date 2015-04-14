@@ -30,6 +30,7 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'syntax-highlighting' \
   'ssh' \
+  'gpg' \
   'prompt' \
   'tmux' \
   'ruby' \
