@@ -30,4 +30,4 @@ set -g status-right-style "none"
 
 # Window Status
 setw -g window-status-current-format "#[fg=colour236,bg=colour236] #[fg=white]#I #[fg=brightcyan,bg=colour236] #[fg=white,bg=colour236]#W #[fg=colour236,bg=colour236,nobold,nounderscore,noitalics]"
-setw -g window-status-format "#[fg=white,bg=colour236] #I ⮁#[fg=white,bg=colour236] #W "
+setw -g window-status-format "#[fg=white,bg=colour236] #I #[fg=white,bg=colour236] #W "
