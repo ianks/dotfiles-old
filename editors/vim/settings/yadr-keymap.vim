@@ -51,8 +51,8 @@ vmap <leader>[ c[ <C-R>" ]<ESC>
 vmap <leader>] c[<C-R>"]<ESC>
 
 " <leader>{ Surround a word with {braces}
-noremap <leader>} ysiW}
-noremap <leader>{ ysiW{
+nmap <leader>} ysiW}
+nmap <leader>{ ysiW{
 vmap <leader>} c{ <C-R>" }<ESC>
 vmap <leader>{ c{<C-R>"}<ESC>
 
