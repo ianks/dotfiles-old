@@ -58,11 +58,17 @@ bindsym $mod+a focus parent
 # focus a child container
 bindsym $mod+z focus child
 
+# name workspaces
+set $tag1 "1: code"
+set $tag2 "2: chat"
+set $tag3 "3: web"
+set $tag4 "4: music"
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
+bindsym $mod+1 workspace $tag1
+bindsym $mod+2 workspace $tag2
+bindsym $mod+3 workspace $tag3
+bindsym $mod+4 workspace $tag4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -71,16 +77,24 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+1 move container to workspace $tag1
+bindsym $mod+Shift+2 move container to workspace $tag2
+bindsym $mod+Shift+3 move container to workspace $tag3
+bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# start apps
+exec --no-startup-id i3-msg 'workspace 2: chat; exec sleep 15 && firefox --new-window https://sikuli.slack.com'
+exec --no-startup-id i3-msg 'workspace 2: chat; exec env SHELL="/usr/bin/zsh" urxvt -e weechat'
+exec --no-startup-id i3-msg 'workspace 4: music; exec sleep 10 && firefox --new-window https://soundcloud.com'
+exec --no-startup-id i3-msg 'workspace 4: music; exec env SHELL="/usr/bin/zsh" urxvt -e cmus'
+exec --no-startup-id i3-msg 'workspace 1: code; exec env SHELL="/usr/bin/zsh" urxvt'
+exec --no-startup-id i3-msg 'workspace 3: web; exec firefox https://github.com'
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -120,7 +134,7 @@ mode  $power_control {
         bindsym l exec ~/.i3/i3lock.sh; mode "default"
         bindsym o exec i3-msg exit; mode "default"
         bindsym s exec systemctl suspend; mode "default"
-        bindsym h exec systemctl hybernate; mode "default"
+        bindsym h exec systemctl hibernate; mode "default"
         bindsym r exec systemctl reboot; mode "default"
         bindsym p exec systemctl poweroff; mode "default"
 
@@ -137,6 +151,10 @@ bindsym XF86Mail exec xbacklight -dec 5 && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up 8 && pkill -RTMIN+2 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down 8 && pkill -RTMIN+2 i3blocks
 bindsym XF86AudioMute exec pulseaudio-ctl mute && killall -SIGUSR1 i3status
+
+bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
+bindsym XF86AudioPrev exec --no-startup-id cmus-remote -p
+bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
 
 # Printscreen saves screenshot (with shift only focused window)
 bindsym --release Print exec --no-startup-id scrot
