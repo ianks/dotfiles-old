@@ -28,7 +28,7 @@ map <C-a>x d
 noremap <Leader>vr :source ~/.vimperatorrc<CR>
 
 " Don't auto-start navigation in insert mode
-set gui=tabs,nonavigation
+set gui=nobookmarks
 set focuscontent
 
 " Colorscheme
