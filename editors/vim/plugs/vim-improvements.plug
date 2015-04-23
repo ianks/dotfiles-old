@@ -29,3 +29,7 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'roman/golden-ratio'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'bruno-/vim-man'
+
+if has('nvim')
+  Plug 'kassio/neoterm'
+endif
