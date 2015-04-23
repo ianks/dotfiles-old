@@ -4,6 +4,8 @@
 ! URxvt
 ! =====================================
 
+URxvt*termName: rxvt-unicode-256color
+
 ! seoul256
 URxvt.background: #3a3a3a
 URxvt.foreground: #d0d0d0
@@ -30,10 +32,15 @@ URxvt.depth: 32
 
 ! Misc
 URxvt.scrollBar: false
+URxvt.saveLines: 16384
 
 ! Font settings
-URxvt*font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:medium:pixelsize=22:antialias=true:hinting=true, xft:Font\ Awesome:pixelsize=22
-URxvt.letterSpace: -1
+URxvt.font: xft:Droid Sans Mono for Powerline:medium:pixelsize=20
+URxvt.letterSpace: -2
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintfull
 
 ! Cut and paste
 URxvt.perl-ext-common: default,clipboard
