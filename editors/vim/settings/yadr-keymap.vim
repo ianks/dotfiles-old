@@ -84,6 +84,9 @@ nnoremap <leader>gw   :Gwrite<CR><CR>
 " Open up docs for method
 nnoremap <leader>K :call investigate#Investigate()<CR>
 
+" use <leader>gf to go to file in a vertical split
+nnoremap <silent> <leader>gf :vertical botright wincmd F<CR>
+
 "Go to last edit location with <leader>.
 nnoremap <leader>. '.
 
