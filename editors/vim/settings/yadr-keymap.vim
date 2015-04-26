@@ -56,7 +56,30 @@ nmap <leader>{ ysiW{
 vmap <leader>} c{ <C-R>" }<ESC>
 vmap <leader>{ c{<C-R>"}<ESC>
 
-map <leader>` ysiW`
+" <leader>` Surround a word with `backticks`
+nmap <leader>` ysiW`
+nmap <leader>` ysiW`
+vmap <leader>` c` <C-R>" `<ESC>
+vmap <leader>` c`<C-R>"`<ESC>
+
+" Git mappings
+nnoremap <leader>dg   :diffget<CR>
+nnoremap <leader>dp   :diffput<CR>
+nnoremap <leader>ga   :Git add %:p<CR><CR>
+nnoremap <leader>gb   :Git branch<space>
+nnoremap <leader>gbr  :Gbrowse
+nnoremap <leader>gc   :Gcommit -v -q<CR>
+nnoremap <leader>gd   :Gdiff<CR>
+nnoremap <leader>ge   :Gedit<CR>
+nnoremap <leader>gl   :silent! Glog<CR>:bot copen<CR>
+nnoremap <leader>gm   :Gmove<space>
+nnoremap <leader>gco   :Git checkout<space>
+nnoremap <leader>gpl  :Gpull<CR>
+nnoremap <leader>gps  :Gpush<CR>
+nnoremap <leader>gr   :Gread<CR>
+nnoremap <leader>gs   :Gstatus<CR>
+nnoremap <leader>gt   :Gcommit -v -q %:p<CR>
+nnoremap <leader>gw   :Gwrite<CR><CR>
 
 "Go to last edit location with <leader>.
 nnoremap <leader>. '.
@@ -79,9 +102,6 @@ nnoremap // :nohlsearch<CR>
 
 "(v)im (r)eload
 nnoremap <leader>vr :so $MYVIMRC<CR>
-
-" Type <leader>hl to toggle highlighting on/off, and show current value.
-noremap <leader>hl :set hlsearch! hlsearch?<CR>
 
 " These are very similar keys. Typing 'a will jump to the line in the current
 " file marked with ma. However, `a will jump to the line and column marked
