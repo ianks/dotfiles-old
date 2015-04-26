@@ -12,8 +12,6 @@ let g:vimfiler_marked_file_icon = '✑'
 " Allow to create and remove files
 call vimfiler#custom#profile('default', 'context', {'safe' : 0})
 
-nnoremap <leader>e :<C-u>VimFilerSplit -force-quit<cr>
-
 function! s:vimfiler_settings()
   " Mimic NERDtree split behavior
   nnoremap <silent><buffer><expr> <C-x> vimfiler#do_switch_action('split')

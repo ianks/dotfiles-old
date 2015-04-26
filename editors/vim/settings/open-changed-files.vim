@@ -16,5 +16,3 @@ function! OpenChangedFiles()
   end
 endfunction
 command! OpenChangedFiles :call OpenChangedFiles()
-
-nnoremap <leader>ocf :OpenChangedFiles<CR>

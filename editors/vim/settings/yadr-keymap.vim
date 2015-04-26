@@ -12,12 +12,6 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-"make Y consistent with C and D
-nnoremap Y y$
-function! YRRunAfterMaps()
-  nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
-endfunction
-
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
 " interested in working with text rather than empty space. If
@@ -25,46 +19,78 @@ endfunction
 nnoremap 0 ^
 nnoremap ^ 0
 
+"Go to last edit location with <leader>.
+nnoremap <leader>. '.
+
+"Clear current search highlight by double tapping //
+nnoremap // :nohlsearch<CR>
+
+" These are very similar keys. Typing 'a will jump to the line in the current
+" file marked with ma. However, `a will jump to the line and column marked
+" with ma.  It’s more useful in any case I can imagine, but it’s located way
+" off in the corner of the keyboard. The best way to handle this is just to
+" swap them: http://items.sjbach.com/319/configuring-vim-right
+nnoremap ' `
+nnoremap ` '
+
+"When typing a string, your quotes auto complete. Move past the quote
+"while still in insert mode by hitting Ctrl-j. Example:
+"
+" type 'foo<c-j>
+"
+" the first quote will autoclose so you'll get 'foo' and hitting <c-j> will
+" put the cursor right after the quote
+imap <C-j> <esc>ea
+
+
+"""""""""""""""""""""""""""""""""""""""
+" <leader>s
+" Surround mappings
+
 " <leader># Surround a word with #{ruby interpolation}
-nmap <leader># ysiW#
-vmap <leader># c#{<C-R>"}<ESC>
+nmap <leader>s# ysiW#
+vmap <leader>s# c#{<C-R>"}<ESC>
 
 " <leader>" Surround a word with "quotes"
-nmap <leader>" ysiW"
-vmap <leader>" c"<C-R>""<ESC>
+nmap <leader>s" ysiW"
+vmap <leader>s" c"<C-R>""<ESC>
 
 " <leader>' Surround a word with 'single quotes'
-noremap <leader>' ysiW'
-vmap <leader>' c'<C-R>"'<ESC>
+noremap <leader>s' ysiW'
+vmap <leader>s' c'<C-R>"'<ESC>
 
 " <leader>) or ,( Surround a word with (parens)
 " The difference is in whether a space is put in
-nmap <leader>( ysiW(
-nmap <leader>) ysiW)
-vmap <leader>( c( <C-R>" )<ESC>
-vmap <leader>) c(<C-R>")<ESC>
+nmap <leader>s( ysiW(
+nmap <leader>s) ysiW)
+vmap <leader>s( c( <C-R>" )<ESC>
+vmap <leader>s) c(<C-R>")<ESC>
 
 " <leader>[ Surround a word with [brackets]
-nmap <leader>] ysiW]
-nmap <leader>[ ysiW[
-vmap <leader>[ c[ <C-R>" ]<ESC>
-vmap <leader>] c[<C-R>"]<ESC>
+nmap <leader>s] ysiW]
+nmap <leader>s[ ysiW[
+vmap <leader>s[ c[ <C-R>" ]<ESC>
+vmap <leader>s] c[<C-R>"]<ESC>
 
 " <leader>{ Surround a word with {braces}
-nmap <leader>} ysiW}
-nmap <leader>{ ysiW{
-vmap <leader>} c{ <C-R>" }<ESC>
-vmap <leader>{ c{<C-R>"}<ESC>
+nmap <leader>s} ysiW}
+nmap <leader>s{ ysiW{
+vmap <leader>s} c{ <C-R>" }<ESC>
+vmap <leader>s{ c{<C-R>"}<ESC>
 
 " <leader>` Surround a word with `backticks`
-nmap <leader>` ysiW`
-nmap <leader>` ysiW`
-vmap <leader>` c` <C-R>" `<ESC>
-vmap <leader>` c`<C-R>"`<ESC>
+nmap <leader>s` ysiW`
+nmap <leader>s` ysiW`
+vmap <leader>s` c` <C-R>" `<ESC>
+vmap <leader>s` c`<C-R>"`<ESC>
 
+
+"""""""""""""""""""""""""""""""""""""""
+" <leader>g
 " Git mappings
-nnoremap <leader>dg   :diffget<CR>
-nnoremap <leader>dp   :diffput<CR>
+
+nnoremap <leader>gdg   :diffget<CR>
+nnoremap <leader>gdp   :diffput<CR>
 nnoremap <leader>ga   :Git add %:p<CR><CR>
 nnoremap <leader>gb   :Git branch<space>
 nnoremap <leader>gbr  :Gbrowse
@@ -81,41 +107,96 @@ nnoremap <leader>gs   :Gstatus<CR>
 nnoremap <leader>gt   :Gcommit -v -q %:p<CR>
 nnoremap <leader>gw   :Gwrite<CR><CR>
 
-" Open up docs for method
-nnoremap <leader>K :call investigate#Investigate()<CR>
 
-" use <leader>gf to go to file in a vertical split
-nnoremap <silent> <leader>gf :vertical botright wincmd F<CR>
+"""""""""""""""""""""""""""""""""""""""
+" <leader>f
+" File mappings
 
-"Go to last edit location with <leader>.
-nnoremap <leader>. '.
+" File find
+nnoremap <leader>ff :<C-u>Unite -start-insert file_rec/async:!<CR>
 
-"When typing a string, your quotes auto complete. Move past the quote
-"while still in insert mode by hitting Ctrl-j. Example:
-"
-" type 'foo<c-j>
-"
-" the first quote will autoclose so you'll get 'foo' and hitting <c-j> will
-" put the cursor right after the quote
-imap <C-j> <esc>ea
+"File explore
+nnoremap <leader>fe :<C-u>VimFilerSplit -force-quit<CR>
 
-" ============================
-" Shortcuts for everyday tasks
-" ============================
+" Files changed
+nnoremap <leader>fc :OpenChangedFiles<CR>
 
-"Clear current search highlight by double tapping //
-nnoremap // :nohlsearch<CR>
+" Go to file in a vertical split
+nnoremap <leader>fo :vertical botright wincmd F<CR>
 
-"(v)im (r)eload
-nnoremap <leader>vr :so $MYVIMRC<CR>
 
-" These are very similar keys. Typing 'a will jump to the line in the current
-" file marked with ma. However, `a will jump to the line and column marked
-" with ma.  It’s more useful in any case I can imagine, but it’s located way
-" off in the corner of the keyboard. The best way to handle this is just to
-" swap them: http://items.sjbach.com/319/configuring-vim-right
-nnoremap ' `
-nnoremap ` '
+"""""""""""""""""""""""""""""""""""""""
+" <leader>h
+" History mappings
 
-" Re-run last shell command
-nnoremap <leader>rr :!!<CR>
+" History yank
+nnoremap <leader>hy :<C-u>Unite history/yank<CR>
+
+"History undo
+nnoremap <leader>hu :GundoToggle<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""
+" <leader>b
+" Buffer mappings
+
+" Buffer explore
+nnoremap <leader>be :<C-u>Unite buffer<CR>
+
+" Buffer next/prev
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprev<CR>
+
+" Buffer delete
+nnoremap <leader>bd :bdelete<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""
+" <leader>i
+" Informational mappings
+
+" Investigate docs for method
+nnoremap <leader>ii :call investigate#Investigate()<CR>
+
+" Man pages in vertical split
+nnoremap <leader>im <Plug>(Vman)
+
+" Search Google
+command! -nargs=+ Google !open "https://google.com/search?q=""<args>"
+nnoremap <leader>ig :Google<Space>
+
+
+"""""""""""""""""""""""""""""""""""""""
+" <leader>r
+" REPL mappings
+
+if has('nvim') && exists(':tnoremap')
+  " REPL eval
+  nnoremap <leader>re :REPLSendLine<CR>
+  vnoremap <leader>re :REPLSendSelection<CR>
+
+  " REPL start
+  nnoremap <leader>rs :Termy<CR>
+
+  tnoremap <c-j> <c-\><c-n><c-w>j
+  tnoremap <c-k> <c-\><c-n><c-w>k
+  tnoremap <c-h> <c-\><c-n><c-w>h
+  tnoremap <c-l> <c-\><c-n><c-w>l
+else
+  nnoremap <leader>rs :Start<CR>
+endif
+
+"""""""""""""""""""""""""""""""""""""""
+" <leader>t
+" Terminal mappings
+
+" Terminal dispatch
+nnoremap <leader>td :Dispatch<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""
+" <leader>j
+" Jump mappings
+
+" Jump to tag
+nnoremap <leader>jt <C-]>

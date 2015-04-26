@@ -20,6 +20,3 @@ autocmd FileType scala
 autocmd FileType javascript
       \ let b:start = 'node' |
       \ let b:dispatch = 'grunt test'
-
-nnoremap <silent> <leader>d :Dispatch<CR>
-nnoremap <silent> <leader>s :Start<CR>

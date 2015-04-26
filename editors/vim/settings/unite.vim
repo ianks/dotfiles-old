@@ -13,10 +13,6 @@ if executable('ag')
         \ '--ignore "\.git$\|\.hg$\|\.svn$"'
 endif
 
-nnoremap <leader>t :<C-u>Unite -start-insert file_rec/async:!<cr>
-nnoremap <leader>y :<C-u>Unite history/yank<cr>
-nnoremap <leader>b :<C-u>Unite buffer<cr>
-
 function! s:unite_settings()
   " Enable navigation with control-j and control-k in insert mode
   imap <buffer> <C-j> <Plug>(unite_select_next_line)

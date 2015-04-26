@@ -1,4 +1,5 @@
 " Neovim specfic settings
+" Most of it stolen shamelessly from @tarruda
 
 autocmd FileType python
       \ let b:termy = executable('ipython') ? 'ipython -i %' : 'python -i %'
@@ -8,6 +9,16 @@ autocmd FileType scala
       \ let b:termy = 'sbt console'
 autocmd FileType javascript
       \ let b:termy = 'node'
+
+function! s:GetVisual()
+  let [lnum1, col1] = getpos("'<")[1:2]
+  let [lnum2, col2] = getpos("'>")[1:2]
+  let lines = getline(lnum1, lnum2)
+  let lines[-1] = lines[-1][:col2 - 2]
+  let lines[0] = lines[0][col1 - 1:]
+
+  return lines
+endfunction
 
 function! REPLSend(lines)
   call jobsend(g:last_terminal_job_id, add(a:lines, ''))
@@ -21,20 +32,11 @@ function! Termy(cmd)
 endfunction
 
 if has('nvim') && exists(':tnoremap')
-  tnoremap <c-j> <c-\><c-n><c-w>j
-  tnoremap <c-k> <c-\><c-n><c-w>k
-  tnoremap <c-h> <c-\><c-n><c-w>h
-  tnoremap <c-l> <c-\><c-n><c-w>l
-
   augroup Terminal
     au!
     au TermOpen * let g:last_terminal_job_id = b:terminal_job_id
     au WinEnter term://* startinsert
   augroup END
-
-  nnoremap <silent> <f6> :REPLSendLine<cr>
-  vnoremap <silent> <f6> :REPLSendSelection<cr>
-  nnoremap <silent> <leader>r :Termy<CR>
 
   command! -range=% REPLSendSelection call REPLSend(s:GetVisual())
   command! REPLSendLine call REPLSend([getline('.')])
