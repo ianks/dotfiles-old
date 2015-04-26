@@ -81,6 +81,9 @@ nnoremap <leader>gs   :Gstatus<CR>
 nnoremap <leader>gt   :Gcommit -v -q %:p<CR>
 nnoremap <leader>gw   :Gwrite<CR><CR>
 
+" Open up docs for method
+nnoremap <leader>K :call investigate#Investigate()<CR>
+
 "Go to last edit location with <leader>.
 nnoremap <leader>. '.
 
