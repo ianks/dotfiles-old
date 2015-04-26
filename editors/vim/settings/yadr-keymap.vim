@@ -112,8 +112,8 @@ nnoremap <leader>gw   :Gwrite<CR><CR>
 " <leader>f
 " File mappings
 
-" File find
-nnoremap <leader>ff :<C-u>Unite -start-insert file_rec/async:!<CR>
+" File search
+nnoremap <leader>fs :<C-u>Unite -start-insert file_rec/async:!<CR>
 
 "File explore
 nnoremap <leader>fe :<C-u>VimFilerSplit -force-quit<CR>
