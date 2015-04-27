@@ -121,6 +121,9 @@ nnoremap <leader>fe :<C-u>VimFilerSplit -force-quit<CR>
 " Files changed
 nnoremap <leader>fc :OpenChangedFiles<CR>
 
+" File grep
+nnoremap <leader>fg :Unite grep:.<CR>
+
 " Go to file in a vertical split
 nnoremap <leader>fo :vertical botright wincmd F<CR>
 
@@ -141,7 +144,7 @@ nnoremap <leader>hu :GundoToggle<CR>
 " Buffer mappings
 
 " Buffer explore
-nnoremap <leader>be :<C-u>Unite buffer<CR>
+nnoremap <leader>be :<C-u>Unite -quick-match buffer<CR>
 
 " Buffer next/prev
 nnoremap <leader>bn :bnext<CR>

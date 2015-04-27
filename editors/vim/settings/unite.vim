@@ -3,14 +3,18 @@
 
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_file=$HOME.'/.vim/yankring.txt'
-let g:unite_split_rule = 'botright'
 let g:unite_force_overwrite_statusline = 0
-let g:unite_winheight = 10
 
 if executable('ag')
   let g:unite_source_rec_async_command =
         \ 'ag --line-numbers --nocolor --nogroup --hidden -g ""' .
         \ '--ignore "\.git$\|\.hg$\|\.svn$"'
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts =
+        \ '-i --line-numbers --nocolor --nogroup --hidden --ignore ' .
+        \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+  let g:unite_source_grep_recursive_opt = ''
+
 endif
 
 function! s:unite_settings()
