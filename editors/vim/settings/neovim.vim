@@ -2,13 +2,13 @@
 " Most of it stolen shamelessly from @tarruda
 
 autocmd FileType python
-      \ let b:termy = executable('ipython') ? 'ipython -i %' : 'python -i %'
+      \ let b:repler = executable('ipython') ? 'ipython -i %' : 'python -i %'
 autocmd FileType ruby
-      \ let b:termy = executable('pry') ? 'pry -r %:p' : 'irb -r %:p"'
+      \ let b:repler = executable('pry') ? 'pry -r %:p' : 'irb -r %:p"'
 autocmd FileType scala
-      \ let b:termy = 'sbt console'
+      \ let b:repler = 'sbt console'
 autocmd FileType javascript
-      \ let b:termy = 'node'
+      \ let b:repler = 'node'
 
 function! s:GetVisual()
   let [lnum1, col1] = getpos("'<")[1:2]
@@ -24,7 +24,7 @@ function! REPLSend(lines)
   call jobsend(g:last_terminal_job_id, add(a:lines, ''))
 endfunction
 
-function! Termy(cmd)
+function! REPLer(cmd)
   let command = substitute(a:cmd, '%:p', expand('%:p'), 'g')
   let command = substitute(command, '%', expand('%'), 'g')
 
@@ -40,5 +40,5 @@ if has('nvim') && exists(':tnoremap')
 
   command! -range=% REPLSendSelection call REPLSend(s:GetVisual())
   command! REPLSendLine call REPLSend([getline('.')])
-  command! Termy call Termy(b:termy)
+  command! REPLer call REPLer(b:repler)
 endif

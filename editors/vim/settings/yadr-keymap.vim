@@ -183,8 +183,9 @@ if has('nvim') && exists(':tnoremap')
   vnoremap <leader>re :REPLSendSelection<CR>
 
   " REPL start
-  nnoremap <leader>rs :Termy<CR>
+  nnoremap <leader>rs :REPLer<CR>
 
+  " Navigating the terminals
   tnoremap <c-j> <c-\><c-n><c-w>j
   tnoremap <c-k> <c-\><c-n><c-w>k
   tnoremap <c-h> <c-\><c-n><c-w>h
@@ -193,12 +194,19 @@ else
   nnoremap <leader>rs :Start<CR>
 endif
 
+
 """""""""""""""""""""""""""""""""""""""
 " <leader>t
 " Terminal mappings
 
 " Terminal dispatch
 nnoremap <leader>td :Dispatch<CR>
+
+if has('nvim') && exists(':tnoremap')
+  nnoremap <leader>tc :vsp term://
+else
+  nnoremap <leader>tc :Start<Space>
+endif
 
 
 """""""""""""""""""""""""""""""""""""""
