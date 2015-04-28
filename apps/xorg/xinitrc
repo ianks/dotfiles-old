@@ -1,11 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
-I3_PATH="$HOME/.config/i3"
+source_xinitrc_local() {
+    [ -f $HOME/.xinitrc.local ] && source $HOME/.xinitrc.local
+}
 
-if [ -x $HOME/.xinitrc.local ]; then
-    source $HOME/.xinitrc.local
-fi
+setup_i3() {
+    [ ! -f $HOME/.i3/config] && touch $HOME/.i3/config
 
-cat $I3_PATH/config.base $I3_PATH/config.local > $I3_PATH/config
+    cat $HOME/.i3/config.base $HOME/.i3config.local > $HOME/.i3/config
+}
 
-exec /usr/bin/i3
+start_apps() {
+    [ -x /usr/bin/touchegg ] && /usr/bin/touchegg &
+}
+
+source_xinitrc_local
+setup_i3
+start_apps

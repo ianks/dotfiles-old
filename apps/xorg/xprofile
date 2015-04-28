@@ -1,1 +1,3 @@
-touchegg &
+#!/usr/bin/env sh
+
+[ -f $HOME/.xinitrc ] && source $HOME/.xinitrc
