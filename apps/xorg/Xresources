@@ -35,7 +35,7 @@ URxvt.scrollBar: false
 URxvt.saveLines: 16384
 
 ! Font settings
-URxvt.font: xft:Droid Sans Mono for Powerline:medium:pixelsize=20
+URxvt.font: xft:Droid Sans Mono for Powerline:medium:pixelsize=26
 URxvt.letterSpace: -2
 Xft.antialias: true
 Xft.rgba: rgb
