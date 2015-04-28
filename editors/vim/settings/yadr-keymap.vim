@@ -12,6 +12,10 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+" Alt mappings for next and prev buffer
+nnoremap <silent><a-h> :bnext<CR>
+nnoremap <silent><a-l> :bprev<CR>
+
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
 " interested in working with text rather than empty space. If
