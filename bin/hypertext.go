@@ -8,6 +8,7 @@ import (
     "sync"
     "os/exec"
     "time"
+    "runtime"
 )
 var wg sync.WaitGroup
 
@@ -31,8 +32,18 @@ func Serve(port string) {
 func OpenBrowser(port string) {
     defer wg.Done()
 
+    open := ""
+    switch runtime.GOOS {
+    case "linux":
+        open = "/usr/bin/xdg-open"
+    case "darwin":
+        open = "/usr/bin/open"
+    default:
+        println("Could not reliably find a command to launch the browser.")
+    }
+
     time.Sleep(time.Second * 2)
-    cmd := exec.Command("/usr/bin/open", "http://localhost:" + port)
+    cmd := exec.Command(open, "http://localhost:" + port)
     stdout, err := cmd.Output()
 
     if err != nil {
