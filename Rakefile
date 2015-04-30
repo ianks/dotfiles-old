@@ -53,6 +53,14 @@ task :install => [:submodule_init, :submodules] do
       )
     end
 
+    if want_to_install? 'termite: termianl for linux'
+      FileUtils.mkdir_p File.join(ENV['HOME'], '.config', 'termite')
+      FileUtils.ln_sf(
+        File.join(ENV['HOME'], '.yadr', 'apps', 'termite', 'config'),
+        File.join(ENV['HOME'], '.config', 'termite', 'config')
+      )
+    end
+
     file_operation(Dir.glob('apps/i3')) if want_to_install?('i3 window manager configuration')
     file_operation(Dir.glob('apps/i3/i3blocks/*')) if want_to_install?('i3 blocks')
     file_operation(Dir.glob('apps/xorg/*')) if want_to_install?('Xorg configuration')
