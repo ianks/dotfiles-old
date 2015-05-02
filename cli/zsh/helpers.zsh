@@ -17,7 +17,7 @@ replace() {
   replace_with=$1
   shift
 
-  ag -l $find_this $* | xargs sed -i '' "s/$find_this/$replace_with/g"
+  ag -l $find_this $* | xargs sed -i "s/$find_this/$replace_with/g"
 }
 
 whoz_blockin() {
@@ -30,8 +30,4 @@ bak() {
 
 mkcd() {
   mkdir -p "$1" && cd $_
-}
-
-rtfm() {
-  man "$@" 2> /dev/null || $BROWSER "http://www.google.com/search?q=$@" 2> /dev/null
 }

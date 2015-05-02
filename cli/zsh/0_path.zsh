@@ -4,4 +4,3 @@ path=(
   $HOME/.yadr/bin/yadr
   $path
 )
-
