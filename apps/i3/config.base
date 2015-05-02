@@ -9,7 +9,7 @@ font pango:Consolas 16
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec SHELL="/usr/bin/zsh" urxvt
+bindsym $mod+Return exec termite -e zsh
 
 # start a browser
 bindsym $mod+b exec firefox
@@ -90,10 +90,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # start apps
 exec --no-startup-id i3-msg 'workspace 2: chat; exec sleep 15 && firefox --new-window https://sikuli.slack.com'
-exec --no-startup-id i3-msg 'workspace 2: chat; exec env SHELL="/usr/bin/zsh" urxvt -e weechat'
+exec --no-startup-id i3-msg 'workspace 2: chat; exec termite -e weechat'
 exec --no-startup-id i3-msg 'workspace 4: music; exec sleep 10 && firefox --new-window https://soundcloud.com'
-exec --no-startup-id i3-msg 'workspace 4: music; exec env SHELL="/usr/bin/zsh" urxvt -e cmus'
-exec --no-startup-id i3-msg 'workspace 1: code; exec env SHELL="/usr/bin/zsh" urxvt'
+exec --no-startup-id i3-msg 'workspace 4: music; exec termite -e cmus'
+exec --no-startup-id i3-msg 'workspace 1: code; exec termite -e zsh'
 exec --no-startup-id i3-msg 'workspace 3: web; exec firefox https://github.com'
 
 # reload the configuration file

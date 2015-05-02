@@ -91,6 +91,6 @@ alias yedit='vim $HOME/.yadr/'
 alias genpw='openssl rand -base64 18'
 
 # Neovim
-alias n='nvim'
+alias vim='nvim'
 
 alias yadr='cd ~/.yadr'
