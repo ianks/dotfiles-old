@@ -1,7 +1,7 @@
 Plug 'honza/vim-snippets'
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
+Plug 'tpope/vim-markdown'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-syntax-extra'
