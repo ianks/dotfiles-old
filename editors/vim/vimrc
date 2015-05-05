@@ -88,7 +88,7 @@ set splitbelow
 set splitright
 
 " ================ Custom Settings ========================
-so ~/.yadr/editors/vim/settings.vim
+source ~/.yadr/editors/vim/settings.vim
 
 
 " ================ Override ========================

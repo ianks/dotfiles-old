@@ -385,3 +385,59 @@ def success_msg(action)
   puts ""
   puts "YADR has been #{action}. Please restart your terminal and vim."
 end
+
+task :docs do
+  class Help
+    attr_reader :name
+
+    def initialize(file)
+      @file = File.new file
+      @name = File.basename(file, '.vim')
+      @content = @file.read
+      @modal = @name[0]
+    end
+
+    def render
+      parsed = parse_nnoremaps
+
+      <<-vim
+  let g:unite_source_menu_menus.#{@name} = {
+      \\ 'description' : ''
+      \\}
+
+  let g:unite_source_menu_menus.#{@name}.command_candidates = [
+  #{parsed == "\n" ? "[]," : parsed}
+      \\]
+
+  nnoremap <leader>#{@modal}h :<C-u>Unite -silent -start-insert menu:#{@name}<CR>
+      vim
+    end
+
+    private
+
+    def parse_nnoremaps
+      @content
+        .split("\n")
+        .select { |n| n =~ /nnoremap/ }
+        .map { |n| n.match(/<leader>(\S+)\s*(.+)/).captures }
+        .map do |n|
+          keys, cmd = n
+          cmd = (cmd.match(/([^:].+)<\w+>$/) || cmd.match(/([^:]+)/)).captures[0]
+          "    \\[\"▷ #{cmd}#{' ' * (50 - cmd.length)}<SPC>#{keys}\", \"#{cmd}\"],"
+        end
+        .sort
+        .join("\n")
+    end
+  end
+
+  folder = File.join ENV['HOME'], '.vim', 'settings', 'leaders'
+
+  Dir[File.join folder, '*.vim']
+    .reject { |n| n =~ /(surround|-help)/ } # Need to escape 's in surround
+    .map { |n| Help.new(n) }
+    .map do |n|
+      File.open(File.join(folder, "#{n.name}-help.vim"), 'w+') do |f|
+        f.write n.render
+      end
+    end
+end
