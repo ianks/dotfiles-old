@@ -404,7 +404,7 @@ task :docs do
     end
 
     def render
-      parsed = parse_nnoremaps
+      parsed = parse_mappings
 
       <<-vim
   let g:unite_source_menu_menus.#{@name} = {
@@ -421,25 +421,29 @@ task :docs do
 
     private
 
-    def parse_nnoremaps
+    def parse_mappings
       @content
         .split("\n")
-        .select { |n| n =~ /nnoremap/ }
+        .select { |n| n =~ /(nnoremap|nmap)/ }
         .map { |n| n.match(/<leader>(\S+)\s*(.+)/).captures }
         .map do |n|
           keys, cmd = n
           cmd = (cmd.match(/([^:].+)<\w+>$/) || cmd.match(/([^:]+)/)).captures[0]
-          "    \\[\"▷ #{cmd}#{' ' * (50 - cmd.length)}<SPC>#{keys}\", \"#{cmd}\"],"
+          "    \\[\'▷ #{string_sani cmd}#{' ' * (50 - cmd.length)}<SPC>#{string_sani keys}\', \'#{string_sani cmd}\'],"
         end
         .sort
         .join("\n")
+    end
+
+    def string_sani(s)
+      s.gsub "'", "''"
     end
   end
 
   folder = File.join ENV['HOME'], '.vim', 'settings', 'leaders'
 
   Dir[File.join folder, '*.vim']
-    .reject { |n| n =~ /(surround|-help)/ } # Need to escape 's in surround
+    .reject { |n| n =~ /-help/ }
     .map { |n| Help.new(n) }
     .map do |n|
       File.open(File.join(folder, "#{n.name}-help.vim"), 'w+') do |f|
