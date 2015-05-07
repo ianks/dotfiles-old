@@ -11,7 +11,7 @@ nmap <leader>s" ysiW"
 vmap <leader>s" c"<C-R>""<ESC>
 
 " <leader>' Surround a word with 'single quotes'
-noremap <leader>s' ysiW'
+nmap <leader>s' ysiW'
 vmap <leader>s' c'<C-R>"'<ESC>
 
 " <leader>) or ,( Surround a word with (parens)
