@@ -13,10 +13,10 @@ set defsearch=google
 set suggestengines=google
 
 " Scrolling
-nnoremap j 2j
-nnoremap k 2k
-nnoremap h 2h
-nnoremap l 2l
+nnoremap j 4j
+nnoremap k 4k
+nnoremap h 4h
+nnoremap l 4l
 
 " Tmux style tabs
 map <A-l> :tabnext<CR>
