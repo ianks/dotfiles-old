@@ -233,9 +233,10 @@ def install_fonts
   puts "======================================================"
   run %{ git clone https://github.com/powerline/fonts ~/.yadr/fonts}
 
-  FileUtils.cd '~/.yadr/fonts' do
+  install_dir = File.join ENV['HOME'], '.yadr', 'fonts'
+  FileUtils.cd install_dir do
     run %{ /usr/bin/env bash install.sh }
-    FileUtils.rmdir '~/.yadr/fonts'
+    FileUtils.rm_rf install_dir
   end
 
   puts
