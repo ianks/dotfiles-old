@@ -229,10 +229,15 @@ end
 
 def install_fonts
   puts "======================================================"
-  puts "Installing patched fonts for Powerline/Lightline."
+  puts "Installing Powerline fonts."
   puts "======================================================"
-  run %{ cp -f $HOME/.yadr/fonts/* $HOME/Library/Fonts } if RUBY_PLATFORM.downcase.include?("darwin")
-  run %{ mkdir -p ~/.fonts && cp ~/.yadr/fonts/* "$_" && fc-cache -vf ~/.fonts } if RUBY_PLATFORM.downcase.include?("linux")
+  run %{ git clone https://github.com/powerline/fonts ~/.yadr/fonts}
+
+  FileUtils.cd '~/.yadr/fonts' do
+    run %{ /usr/bin/env bash install.sh }
+    FileUtils.rmdir '~/.yadr/fonts'
+  end
+
   puts
 end
 
