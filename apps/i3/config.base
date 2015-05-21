@@ -3,7 +3,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Consolas 16
+font pango:Open Sans 16
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -176,7 +176,7 @@ bar {
     # status_command ~/.i3/i3status_wrapper.sh
     status_command i3blocks
     position top
-    font pango:Consolas, FontAwesome 16
+    font pango:Open Sans, FontAwesome 16
 
     colors {
          background #333333
