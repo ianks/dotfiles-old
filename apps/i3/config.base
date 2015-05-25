@@ -133,8 +133,8 @@ mode  $power_control {
 bindsym $mod+n mode $power_control
 
 # Sceen brightness controls (brightness up, brightness down)
-bindsym XF86HomePage exec xbacklight -inc 5 && pkill -RTMIN+1 i3blocks
-bindsym XF86Mail exec xbacklight -dec 5 && pkill -RTMIN+1 i3blocks
+bindsym XF86HomePage exec xbacklight -dec 5 && pkill -RTMIN+1 i3blocks
+bindsym XF86Mail exec xbacklight -inc 5 && pkill -RTMIN+1 i3blocks
 
 # Audio controls (volume up, volume down, toggle mute)
 bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up 8 && pkill -RTMIN+2 i3blocks
