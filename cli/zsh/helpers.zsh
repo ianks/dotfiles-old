@@ -17,7 +17,7 @@ replace() {
   replace_with=$1
   shift
 
-  ag -l $find_this $* | xargs sed -i "s/$find_this/$replace_with/g"
+  ag -l $find_this $* | xargs sed "s/$find_this/$replace_with/g"
 }
 
 whoz_blockin() {
