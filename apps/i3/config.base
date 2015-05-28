@@ -89,12 +89,10 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # start apps
-exec --no-startup-id i3-msg 'workspace 2: chat; exec sleep 15 && firefox --new-window https://sikuli.slack.com'
-exec --no-startup-id i3-msg 'workspace 2: chat; exec termite -e weechat'
-exec --no-startup-id i3-msg 'workspace 4: music; exec sleep 10 && firefox --new-window https://soundcloud.com'
-exec --no-startup-id i3-msg 'workspace 4: music; exec termite -e cmus'
-exec --no-startup-id i3-msg 'workspace 1: code; exec termite -e zsh'
+exec --no-startup-id i3-msg 'workspace 2: chat; firefox --new-window https://sikuli.slack.com'
+exec --no-startup-id i3-msg 'workspace 4: music; firefox --new-window https://soundcloud.com'
 exec --no-startup-id i3-msg 'workspace 3: web; exec firefox https://github.com'
+exec --no-startup-id i3-msg 'workspace 1: code; exec termite'
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
