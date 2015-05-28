@@ -1,4 +1,3 @@
-Plug 'honza/vim-snippets'
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'tpope/vim-markdown'

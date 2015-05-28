@@ -1,6 +1,9 @@
 Plug 'Keithbsmiley/investigate.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'SirVer/ultisnips', { 'on': [] }
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
 Plug 'mattn/webapi-vim'
@@ -27,6 +30,5 @@ Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'roman/golden-ratio'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'bruno-/vim-man'
 Plug 'osyo-manga/unite-quickfix'
