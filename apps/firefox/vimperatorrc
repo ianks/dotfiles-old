@@ -33,4 +33,6 @@ set focuscontent
 " Colorscheme
 colorscheme zenburn
 
+" Better hint chars
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
 " vim: ft=vim ts=4 sw=4 sts=0 et
