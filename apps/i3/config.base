@@ -18,8 +18,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec j4-dmenu-desktop
-
+bindsym $mod+d exec dmenu_run -i -b -p 'Arch Linux' -fn 'Open Sans:pixelsize=16' -nb '#3a3a3a' -nf '#d0d0d0' -sf '#3a3a3a' -sb '#87afaf'
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
