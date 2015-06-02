@@ -5,11 +5,8 @@
 "
 " Stop using ESC!
 inoremap jk <esc>
-inoremap <esc> <nop>
 vnoremap jk <esc>
-vnoremap <esc> <nop>
 cnoremap jk <esc>
-cnoremap <esc> <nop>
 
 " Stop pressing shift all the time
 nnoremap ; :
