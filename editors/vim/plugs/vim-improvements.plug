@@ -21,7 +21,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'vim-scripts/lastpos.vim'
-Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-easytags', { 'on' : [] }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', { 'do' : 'make' }

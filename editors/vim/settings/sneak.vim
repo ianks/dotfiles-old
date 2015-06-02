@@ -5,8 +5,8 @@
 let g:sneak#prompt = '▶ '
 
 nmap f <Plug>(SneakStreak)
-nmap F <Plug>(SneakStreakBackwards)
+nmap F <Plug>(SneakStreakBackward)
 xmap f <Plug>(SneakStreak)
-xmap F <Plug>(SneakStreakBackwards)
+xmap F <Plug>(SneakStreakBackward)
 omap f <Plug>(SneakStreak)
-omap F <Plug>(SneakStreakBackwards)
+omap F <Plug>(SneakStreakBackward)
