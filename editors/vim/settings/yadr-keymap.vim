@@ -52,3 +52,6 @@ if has('nvim') && exists(':tnoremap')
   tnoremap <c-h> <c-\><c-n><c-w>h
   tnoremap <c-l> <c-\><c-n><c-w>l
 endif
+
+" Use D to delete a range then move cursor back
+com! -range D <line1>,<line2>d | norm <C-o>
