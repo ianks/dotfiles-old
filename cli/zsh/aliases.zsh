@@ -45,6 +45,7 @@ alias zr='source ~/.zshrc'
 alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias hpr='gpsh > /dev/null && hub pull-request && hub browse'
 alias grb='git recent-branches'
+alias groot='cd $(git root)'
 
 # Common shell functions
 alias less='less -r'

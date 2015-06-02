@@ -44,6 +44,7 @@
 
 	# credit the commit (git credit some_persons_name)
 	credit = !sh -c 'git commit --amend --author \"$1\" -C HEAD' -
+	root = rev-parse --show-toplevel
 [format]
 	pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 
