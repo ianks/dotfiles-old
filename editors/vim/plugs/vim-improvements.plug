@@ -1,7 +1,7 @@
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-Plug 'SirVer/ultisnips'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer', 'on' : []}
+Plug 'SirVer/ultisnips', { 'on' : [] }
 Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'godlygeek/tabular'
