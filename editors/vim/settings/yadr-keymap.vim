@@ -4,7 +4,12 @@
 "
 "
 " Stop using ESC!
-imap jk <Esc>
+inoremap jk <esc>
+inoremap <esc> <nop>
+vnoremap jk <esc>
+vnoremap <esc> <nop>
+cnoremap jk <esc>
+cnoremap <esc> <nop>
 
 " Stop pressing shift all the time
 nnoremap ; :
@@ -55,3 +60,4 @@ endif
 
 " Use D to delete a range then move cursor back
 com! -range D <line1>,<line2>d | norm <C-o>
+
