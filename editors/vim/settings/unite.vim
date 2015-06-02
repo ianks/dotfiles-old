@@ -4,6 +4,7 @@
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_file=$HOME.'/.vim/yankring.txt'
 let g:unite_force_overwrite_statusline = 0
+let g:unite_source_rec_max_cache_files = 0
 
 if executable('ag')
   let g:unite_source_rec_async_command =
