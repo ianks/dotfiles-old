@@ -87,6 +87,10 @@ set scrolloff=8
 set splitbelow
 set splitright
 
+" ================ Timeout ========================
+set timeoutlen=1000
+set ttimeoutlen=10
+
 " ================ Custom Settings ========================
 source ~/.yadr/editors/vim/settings.vim
 
