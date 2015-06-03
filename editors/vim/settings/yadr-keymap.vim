@@ -8,6 +8,10 @@ inoremap jk <esc>
 vnoremap jk <esc>
 cnoremap jk <esc>
 
+if has('nvim')
+  tnoremap jk <C-\><C-n>
+endif
+
 " Stop pressing shift all the time
 nnoremap ; :
 nnoremap : ;
