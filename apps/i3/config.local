@@ -1,6 +1,0 @@
-# start apps
-exec --no-startup-id i3-msg 'workspace 2: chat;  exec sleep 10 && /usr/bin/env VDPAU_DRIVER=va_gl firefox --new-window https://collaborativelabs.slack.com'
-exec --no-startup-id i3-msg 'workspace 4: music; exec sleep 5 && /usr/bin/env VDPAU_DRIVER=va_gl firefox --new-window https://soundcloud.com'
-exec --no-startup-id i3-msg 'workspace 3: web;   exec VDPAU_DRIVER=va_gl firefox https://github.com'
-exec --no-startup-id i3-msg 'workspace 1: code;  exec termite'
-
