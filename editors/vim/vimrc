@@ -89,7 +89,7 @@ set splitright
 
 " ================ Timeout ========================
 set timeoutlen=1000
-set ttimeoutlen=10
+set ttimeoutlen=100
 
 " ================ Custom Settings ========================
 source ~/.yadr/editors/vim/settings.vim
