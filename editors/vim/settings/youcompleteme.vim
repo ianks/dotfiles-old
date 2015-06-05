@@ -1,7 +1,6 @@
 " YouCompleteMe
 " A code-completion engine for Vim
 
-let g:ycm_filepath_completion_use_working_dir = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_min_num_of_chars_for_completion = 3
 
