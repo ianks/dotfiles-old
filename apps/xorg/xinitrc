@@ -7,7 +7,7 @@ source_xinitrc_local() {
 setup_i3() {
     [ ! -f $HOME/.i3/config ] && touch $HOME/.i3/config
 
-    cat $HOME/.i3/config.base $HOME/.i3/config.local > $HOME/.i3/config
+    cat $HOME/.i3/config.base $HOME/.i3config.local > $HOME/.i3/config
 }
 
 start_apps() {
