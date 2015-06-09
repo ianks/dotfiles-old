@@ -9,10 +9,6 @@ Usage: $(basename "$0") [options] pattern
 Search your bundle for the provided pattern
   * Requires bundler 1.8+ for execution as a bundler subcommand.
 
-bundle-search tries to find a proper backend for you. It attempts to use:
-	1. ag
-	2. grep
-
 Examples:
 	- bundle search Kernel.warn
 	- bundle search current_user clearance
@@ -37,12 +33,5 @@ search_path() {
 	fi
 }
 
-search_cmd() {
-	if hash ag 2>/dev/null; then
-		echo "ag -G .*\.rb"
-	else
-		echo "grep -R --color --include=\*.rb"
-	fi
-}
-
-eval "$(search_cmd) "$@" "$PATTERN" $(search_path)"
+pattern="$1"; shift
+ag "$pattern" "$@" $(search_path)
