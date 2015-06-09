@@ -31,16 +31,19 @@ URxvt.colorBD: #e4e4e4
 URxvt.depth: 32
 
 ! Misc
+URxvt.font: xft:Droid Sans Mono for Powerline:medium:pixelsize=26
 URxvt.scrollBar: false
 URxvt.saveLines: 16384
 
+
 ! Font settings
-URxvt.font: xft:Droid Sans Mono for Powerline:medium:pixelsize=26
-URxvt.letterSpace: -2
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.hinting: 1
 Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
 
 ! Cut and paste
 URxvt.perl-ext-common: default,clipboard
