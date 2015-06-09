@@ -5,9 +5,7 @@
 "
 " Stop using ESC!
 inoremap jk <esc>
-vnoremap jk <esc>
 cnoremap jk <esc>
-
 if has('nvim')
   tnoremap jk <C-\><C-n>
 endif

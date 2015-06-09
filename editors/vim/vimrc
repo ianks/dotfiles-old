@@ -90,6 +90,10 @@ set splitright
 " ================ Custom Settings ========================
 source ~/.yadr/editors/vim/settings.vim
 
+" ================ Important configs ========================
+let g:ruby_path = '/usr/bin/ruby'
+let s:ruby_path = '/usr/bin/ruby'
+
 " ================ Override ========================
 if filereadable(expand("~/.vimrc.after"))
   source ~/.vimrc.after

@@ -55,9 +55,16 @@ Pry.config.commands.import default_command_set
 begin
   require 'pry-theme'
   Pry.config.theme = 'zenburn'
-rescue LoadError => err
+rescue LoadError
   puts '$ gem install pry-theme  <-- Highly recommended.'
 end
+
+begin
+  require 'pry-byebug'
+rescue LoadError
+  puts '$ gem install pry-byebug  <-- Highly recommended.'
+end
+
 
 
 # === CONVENIENCE METHODS ===
