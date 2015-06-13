@@ -20,8 +20,8 @@ replace() {
   ag -l $find_this $* | xargs perl -pi -E "s/$find_this/$replace_with/g"
 }
 
-whoz_blockin() {
-  lsof -i tcp:"$1"
+killonport() {
+  lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
 }
 
 bak() {
