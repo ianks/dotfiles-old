@@ -14,7 +14,8 @@
     $ sh -c "`curl -fsSL https://raw.github.com/ianks/yadr-alt/master/install.sh`"
 ```
 
-**Always be sure to run `rake update` after pulling to ensure plugins are updated**
+![scrot1](http://i.imgur.com/uuCdF4z.png)
+![scrot2](http://i.imgur.com/5cjiVUI.png)
 
 # Installation
 
@@ -40,6 +41,8 @@ cd ~/.yadr
 git pull --rebase
 rake update
 ```
+
+**Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
 # What's included, and how to customize
 
