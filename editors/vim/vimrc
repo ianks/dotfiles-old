@@ -7,7 +7,6 @@ endif
 " ================ General Config ====================
 
 set number                      "Line numbers are good
-set relativenumber              "Hybrid numbering ftw
 set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
