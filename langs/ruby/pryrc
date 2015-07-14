@@ -81,3 +81,10 @@ class Hash
     Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
   end
 end
+
+def open_html(body)
+  require 'tempfile'
+  file = Tempfile.new(['html_preview', '.html'])
+  file.write body
+  system "xdg-open #{file.path}"
+end
