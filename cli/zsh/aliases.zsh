@@ -92,3 +92,4 @@ alias yedit='vim $HOME/.yadr/'
 alias genpw='openssl rand -base64 18'
 
 alias yadr='cd ~/.yadr'
+alias x='startx'
