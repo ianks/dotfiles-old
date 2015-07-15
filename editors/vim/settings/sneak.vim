@@ -2,11 +2,12 @@
 " Sneak is a minimalist, versatile Vim motion plugin that jumps to any
 " location specified by two characters.
 
+let g:sneak#streak = 1
 let g:sneak#prompt = '▶ '
 
-nmap f <Plug>(SneakStreak)
-nmap F <Plug>(SneakStreakBackward)
-xmap f <Plug>(SneakStreak)
-xmap F <Plug>(SneakStreakBackward)
-omap f <Plug>(SneakStreak)
-omap F <Plug>(SneakStreakBackward)
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S
+xmap f <Plug>Sneak_s
+xmap F <Plug>Sneak_S
+omap f <Plug>Sneak_s
+omap F <Plug>Sneak_S
