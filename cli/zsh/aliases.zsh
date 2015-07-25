@@ -66,8 +66,11 @@ alias src='spring rails c'
 alias srdm='spring rake db:migrate'
 alias rdm='rake db:migrate'
 alias rdmr='rake db:migrate:redo'
-alias c='rails c' # Rails 3
 alias be='bundle exec'
+
+alias srails='spring rails'
+alias srake='spring rake'
+alias srspec='spring rspec'
 
 # Python
 alias pyclean='find . -name "*.pyc" -print0 | xargs -0 rm'
@@ -83,7 +86,7 @@ alias wisdom='fortune -s | cowsay'
 alias v='vim'
 
 # Remove binding.pry
-alias depry="ag -l 'binding.pry' | xargs sed -i '' -e '/binding.pry/d'"
+alias depry="ag -l 'binding.pry' | xargs sed -e '/binding.pry/d'"
 
 # Edit config
 alias yedit='vim $HOME/.yadr/'
@@ -93,3 +96,5 @@ alias genpw='openssl rand -base64 18'
 
 alias yadr='cd ~/.yadr'
 alias x='startx'
+
+alias c='ccat'
