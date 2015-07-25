@@ -2,7 +2,7 @@
 font = Source Code Pro for Powerline 16
 
 [colors]
-background = rgba(58, 58, 58, 0.95)
+background = rgba(58, 58, 58, 0.93)
 foreground = #d0d0d0
 
 color0 = #4e4e4e
