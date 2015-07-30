@@ -8,6 +8,7 @@ let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = ''
 let g:vimfiler_readonly_file_icon = '⭤'
 let g:vimfiler_marked_file_icon = '✑'
+let g:vimfiler_time_format = ""
 
 " Allow to create and remove files
 call vimfiler#custom#profile('default', 'context', {'safe' : 0})
