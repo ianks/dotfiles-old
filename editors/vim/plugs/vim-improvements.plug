@@ -31,3 +31,7 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'roman/golden-ratio'
 Plug 'bruno-/vim-man'
 Plug 'osyo-manga/unite-quickfix'
+
+if has('nvim')
+  Plug 'kassio/neoterm'
+endif
