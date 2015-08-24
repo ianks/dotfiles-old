@@ -10,10 +10,10 @@ new_window normal 2 px
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite -e zsh
+bindsym $mod+Return exec --no-startup-id termite -e zsh
 
 # start a browser
-bindsym $mod+b exec firefox
+bindsym $mod+b exec --no-startup-id firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -62,7 +62,7 @@ bindsym $mod+z focus child
 set $tag1 "1: code"
 set $tag2 "2: chat"
 set $tag3 "3: web"
-set $tag4 "4: music"
+set $tag4 "4: sound"
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1

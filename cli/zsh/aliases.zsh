@@ -86,7 +86,7 @@ alias wisdom='fortune -s | cowsay'
 alias v='vim'
 
 # Remove binding.pry
-alias depry="ag -l 'binding.pry' | xargs sed -e '/binding.pry/d'"
+alias depry="ag -l 'binding.pry' | xargs sed --in-place '/binding.pry/d'"
 
 # Edit config
 alias yedit='vim $HOME/.yadr/'
