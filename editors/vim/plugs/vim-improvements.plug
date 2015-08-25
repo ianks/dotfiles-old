@@ -31,6 +31,7 @@ Plug 'Shougo/vimfiler.vim'
 Plug 'roman/golden-ratio'
 Plug 'bruno-/vim-man'
 Plug 'osyo-manga/unite-quickfix'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 
 if has('nvim')
   Plug 'kassio/neoterm'
