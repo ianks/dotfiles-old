@@ -3,9 +3,9 @@
 " File mappings
 
 " File search
-nnoremap <leader>fs :<C-u>Unite -start-insert -auto-resize file_rec/async:!<CR>
+nnoremap <leader>fs :FZF<CR>
 
-"File explore
+" File explore
 nnoremap <leader>fe :<C-u>VimFilerSplit -force-quit<CR>
 
 " Files changed
