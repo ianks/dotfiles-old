@@ -82,9 +82,6 @@ alias aptu='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get aut
 # Random
 alias wisdom='fortune -s | cowsay'
 
-# Yeah.
-alias v='vim'
-
 # Remove binding.pry
 alias depry="ag -l 'binding.pry' | xargs sed --in-place '/binding.pry/d'"
 
@@ -98,3 +95,6 @@ alias yadr='cd ~/.yadr'
 alias x='startx'
 
 alias c='ccat'
+
+alias v='/usr/bin/nvim'
+alias tailstaging='ssh deploy@staging.adhawk-api.com -C "tail -f ~/adhawk/shared/log/staging.log"'

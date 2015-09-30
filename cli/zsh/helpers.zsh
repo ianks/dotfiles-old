@@ -31,9 +31,3 @@ bak() {
 mkcd() {
   mkdir -p "$1" && cd $_
 }
-
-pacsort() {
-  sudo armrr US
-  sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-  sudo sh -c "rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist"
-}
