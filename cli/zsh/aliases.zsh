@@ -60,17 +60,11 @@ alias k9='kill -9'
 alias ..='cd ..'
 
 # Ruby
-alias rs='rspec spec'
-alias sr='spring rspec'
-alias src='spring rails c'
-alias srdm='spring rake db:migrate'
-alias rdm='rake db:migrate'
-alias rdmr='rake db:migrate:redo'
+alias sr='zeus test'
+alias src='zeus console'
 alias be='bundle exec'
 
-alias srails='spring rails'
-alias srake='spring rake'
-alias srspec='spring rspec'
+alias srake='zeus rake'
 
 # Python
 alias pyclean='find . -name "*.pyc" -print0 | xargs -0 rm'
