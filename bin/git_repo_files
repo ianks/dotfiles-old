@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ag -l -g "" $(realpath "$(git rev-parse --show-toplevel)" --relative-to .)
