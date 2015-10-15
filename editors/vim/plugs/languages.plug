@@ -4,4 +4,4 @@ Plug 'tpope/vim-markdown'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-syntax-extra'
-Plug 'https://github.com/marijnh/tern_for_vim'
+Plug 'https://github.com/marijnh/tern_for_vim', { 'do': 'npm install' }
