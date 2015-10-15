@@ -3,7 +3,7 @@
 " File mappings
 
 " File search
-nnoremap <leader>fs :FZF<CR>
+nnoremap <leader>fs :Files<CR>
 
 " File explore
 nnoremap <leader>fe :<C-u>VimFilerSplit -force-quit<CR>
@@ -12,7 +12,7 @@ nnoremap <leader>fe :<C-u>VimFilerSplit -force-quit<CR>
 nnoremap <leader>fc :OpenChangedFiles<CR>
 
 " File grep
-nnoremap <leader>fg :Unite grep:.<CR>
+nnoremap <leader>fg :Ag<CR>
 
 " Go to file in a vertical split
 nnoremap <leader>fo :vertical botright wincmd F<CR>

@@ -3,7 +3,7 @@
 " Buffer mappings
 
 " Buffer explore
-nnoremap <leader>be :<C-u>Unite -quick-match buffer<CR>
+nnoremap <leader>bs :Buffers
 
 " Buffer next/prev
 nnoremap <leader>bn :bnext<CR>
