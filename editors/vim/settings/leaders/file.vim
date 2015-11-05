@@ -3,7 +3,7 @@
 " File mappings
 
 " File search
-nnoremap <leader>fs :Files<CR>
+nnoremap <leader>fs :GitFiles<CR>
 
 " File explore
 nnoremap <leader>fe :<C-u>VimFilerSplit -force-quit<CR>

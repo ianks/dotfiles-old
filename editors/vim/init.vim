@@ -1,0 +1,1 @@
+/home/ianks/.nvim/vimrc
