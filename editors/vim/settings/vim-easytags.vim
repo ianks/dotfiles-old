@@ -8,14 +8,14 @@ if executable('jsctags')
   let g:easytags_languages = {
   \   'javacript': {
   \     'cmd': 'jsctags',
-  \       'args': [],
-  \       'fileoutput_opt': '-f',
-  \       'stdout_opt': '-f-',
+  \       'args': ['-f'],
+  \       'fileoutput_opt': '-o',
+  \       'stdout_opt': '-',
   \       'recurse_flag': ''
   \   }
   \}
 else
-  echoe 'CTags: jsctags not installed. `npm install -g git+https://github.com/ramitos/jsctags.git`'
+  echoe 'CTags: jsctags not installed. `npm install -g jsctags`'
 endif
 
 if executable('ripper-tags')
