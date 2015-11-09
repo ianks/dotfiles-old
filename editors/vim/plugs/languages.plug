@@ -1,7 +1,7 @@
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'tpope/vim-markdown'
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
