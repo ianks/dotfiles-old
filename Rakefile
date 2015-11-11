@@ -61,6 +61,14 @@ task :install => [:submodule_init, :submodules] do
       )
     end
 
+    if want_to_install? 'qutebrowser: vim-like browser'
+      FileUtils.mkdir_p File.join(ENV['HOME'], '.config', 'termite')
+      FileUtils.ln_sf(
+        File.join(ENV['HOME'], '.yadr', 'apps', 'qutebrowser'),
+        File.join(ENV['HOME'], '.config', 'qutebrowser')
+      )
+    end
+
     file_operation(Dir.glob('apps/i3')) if want_to_install?('i3 window manager configuration')
     file_operation(Dir.glob('apps/i3/i3blocks/*')) if want_to_install?('i3 blocks')
     file_operation(Dir.glob('apps/xorg/*')) if want_to_install?('Xorg configuration')
