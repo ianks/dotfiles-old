@@ -4,7 +4,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Open Sans 0
-new_window normal 2 px
+new_window normal 1 px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -20,6 +20,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -i -b -p 'Arch Linux' -fn 'Open Sans:pixelsize=16' -nb '#3a3a3a' -nf '#d0d0d0' -sf '#3a3a3a' -sb '#87afaf'
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -44,7 +45,7 @@ bindsym $mod+f fullscreen
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+t layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+e layout toggle all
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -53,10 +54,17 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
+bindsym $mod+c focus child
 
 # focus a child container
 bindsym $mod+z focus child
+
+# Stack layouts
+layout stacking
+
+# Screenshot
+bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
 
 # name workspaces
 set $tag1 "1: code"
@@ -162,6 +170,9 @@ exec --no-startup-id udiskie --smart-tray
 
 # Wallpaper
 exec --no-startup-id nitrogen --restore
+
+# No borders on edges
+hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
