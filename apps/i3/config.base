@@ -34,17 +34,15 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+s split v
+bindsym $mod+s split vertical
 
 # split in vertical orientation
-bindsym $mod+v split s
+bindsym $mod+v split horizontal
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+t layout stacking
-bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle all
 
 # toggle tiling / floating
@@ -59,9 +57,6 @@ bindsym $mod+c focus child
 
 # focus a child container
 bindsym $mod+z focus child
-
-# Stack layouts
-layout stacking
 
 # Screenshot
 bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
