@@ -1,0 +1,35 @@
+snippet reactclass "Create React class"
+class ${1:class_name} extends React.Component {
+	render() {
+		return (
+			${VISUAL}$0
+		)
+	}
+}
+endsnippet
+
+snippet lam "Create lambda function"
+const ${1:function_name} = (${2:argument}) => (
+	${VISUAL}$0
+)
+endsnippet
+
+snippet cl "console.log" b
+console.log(${1:what_to_log})
+endsnippet
+
+snippet desc "mocha describe"
+describe("${1:what_you_are_testing}", () => {
+	${2:test_body}
+}
+endsnippet
+
+snippet it "mocha it"
+it("${1:what_it_does}", () => {
+	${2:test_body}
+}
+endsnippet
+
+snippet jsxc "jsx comment"
+{/* ${1:comment_text} */}
+endsnippet
