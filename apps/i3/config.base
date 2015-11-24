@@ -160,9 +160,6 @@ exec --no-startup-id start-pulseaudio-x11
 # Notifications
 exec --no-startup-id twmnd
 
-# USB automounter
-exec --no-startup-id udiskie --smart-tray
-
 # Wallpaper
 exec --no-startup-id nitrogen --restore
 
