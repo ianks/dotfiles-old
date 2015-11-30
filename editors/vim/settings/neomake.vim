@@ -6,11 +6,12 @@ else
   echoe 'No eslint executable detected. Install eslint for Javascript syntax higlighting. `npm install -g eslint`'
 endif
 
-let g:neomake_typescript_enabled_makers = ['tsc']
-
+let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 
 if executable('rubocop')
   let g:neomake_ruby_enabled_makers = ['rubocop']
 else
   echoe 'No eslint executable detected. Install eslint for Javascript syntax higlighting. `npm install -g eslint`'
 endif
+
+let g:neomake_open_list = 1
