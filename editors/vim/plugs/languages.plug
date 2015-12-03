@@ -6,3 +6,4 @@ Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
