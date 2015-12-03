@@ -1,5 +1,6 @@
-Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'itchyny/lightline.vim'
 Plug 'jby/tmux.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'shinchu/lightline-gruvbox.vim'
