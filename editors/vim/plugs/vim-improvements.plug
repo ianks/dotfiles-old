@@ -34,3 +34,4 @@ Plug 'osyo-manga/unite-quickfix'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'kassio/neoterm'
