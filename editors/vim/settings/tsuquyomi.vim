@@ -1,1 +1,1 @@
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+autocmd FileType typescript nnoremap <buffer> <Leader>ch : <C-u>echo tsuquyomi#hint()<CR>
