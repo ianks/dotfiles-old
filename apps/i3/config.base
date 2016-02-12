@@ -13,13 +13,13 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id termite -e zsh
 
 # start a browser
-bindsym $mod+b exec --no-startup-id chromium --disable-gpu
+bindsym $mod+b exec --no-startup-id chromium
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -i -b -p 'Arch Linux' -fn 'Open Sans:pixelsize=16' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#83a598'
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
