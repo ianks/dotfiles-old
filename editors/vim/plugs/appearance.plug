@@ -1,4 +1,4 @@
-Plug 'morhetz/gruvbox'
+Plug 'ianks/gruvbox'
 Plug 'godlygeek/csapprox'
 Plug 'itchyny/lightline.vim'
 Plug 'jby/tmux.vim'
