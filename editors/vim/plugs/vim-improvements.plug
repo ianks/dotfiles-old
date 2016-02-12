@@ -1,7 +1,6 @@
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
-" Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --tern-completer' }
-Plug 'Shougo/deoplete.nvim'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --tern-completer --racer-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
