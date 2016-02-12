@@ -48,3 +48,4 @@ Session.vim
 
 .buildpath
 .project
+.ruby-version

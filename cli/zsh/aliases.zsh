@@ -60,11 +60,11 @@ alias k9='kill -9'
 alias ..='cd ..'
 
 # Ruby
-alias sr='zeus test'
-alias src='zeus console'
+alias sr='spring rspec'
+alias src='spring rails console'
 alias be='bundle exec'
 
-alias srake='zeus rake'
+alias srake='spring rake'
 
 # Python
 alias pyclean='find . -name "*.pyc" -print0 | xargs -0 rm'
@@ -93,3 +93,4 @@ alias c='ccat'
 alias v='/usr/bin/nvim'
 alias tailstaging='ssh deploy@staging.adhawk-api.com -C "tail -f ~/adhawk/shared/log/staging.log"'
 alias taildashboard='ssh dashboard -C "tail -f /var/log/nginx/error.log"'
+alias mailinglist='ssh ah-mailing-list -C "cat /tmp/mailing_list.yml"'
