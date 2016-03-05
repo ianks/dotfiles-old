@@ -68,7 +68,7 @@
 
 [core]
 	autocrlf = false
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.yadr/cli/git/gitignore
 
 [advice]

@@ -1,3 +1,5 @@
+# vi: ft=ruby
+
 # === EDITOR ===
 Pry.editor = 'vi'
 
@@ -87,4 +89,14 @@ def open_html(body)
   file = Tempfile.new(['html_preview', '.html'])
   file.write body
   system "xdg-open #{file.path}"
+end
+
+def pbcopy(something)
+  something.tap do |s|
+    IO.popen("xclip -selection clipboard -in", "w") { |pipe| pipe.write s }
+  end
+end
+
+def pbpaste
+  IO.popen("xclip -selection clipboard -out", "r") { |pipe| pipe.read }
 end

@@ -16,3 +16,6 @@ nnoremap <leader>fg :Ag<CR>
 
 " Go to file in a vertical split
 nnoremap <leader>fo :vertical botright wincmd F<CR>
+
+" Format current file
+nnoremap <leader>ff :!rubocop -a %<CR>
