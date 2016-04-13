@@ -4,6 +4,18 @@ snippet ref "Typescript declaration reference"
 /// <reference path='${1:value_name}' />
 endsnippet
 
-snippet cl "Typescript declaration reference"
-console.log('${1:something}');
+snippet cl "console.log"
+console.log(${1:something});
+endsnippet
+
+snippet clb "console.log.bind(console)" w
+console.log.bind(console)
+endsnippet
+
+snippet ce "console.error"
+console.error(${1:something});
+endsnippet
+
+snippet ct "console.table"
+console.table(${1:something});
 endsnippet

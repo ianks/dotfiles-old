@@ -1,6 +1,9 @@
 """""""""""""""""""""""""""""""""""""""
 " <leader>c
-" Cursor mappings
+" Location mappings
 
-" cursor grep
-nnoremap <leader>cg :UniteWithCursorWord grep:.<CR>
+" open location window: lopen
+nnoremap <leader>lo :lopen<CR>
+
+" close location window: lclose
+nnoremap <leader>lc :lclose<CR>
