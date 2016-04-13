@@ -31,11 +31,9 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
-  'gpg' \
   'prompt' \
   'tmux' \
   'ruby' \
-  'osx' \
   'node' \
   'fasd' \
   'pacman' \
