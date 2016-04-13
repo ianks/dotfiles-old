@@ -36,6 +36,7 @@
 	short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
 	simple = log --pretty=format:\" * %s\"
 	shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 
 	# reset
 	unstage = reset HEAD							# remove files from index (tracking)
