@@ -1,0 +1,10 @@
+[Unit]
+Description=PulseAudio System Tray
+After=pulseaudio.service display-manager.service
+
+[Service]
+ExecStart=/usr/bin/pasystray
+Restart=always
+
+[Install]
+WantedBy=default.target
