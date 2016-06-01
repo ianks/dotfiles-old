@@ -2,7 +2,6 @@
 set -g status "on"
 set -g status-justify "left"
 set -g status-style "bg=colour236,none"
-set -g status-utf8 "on"
 
 # Message
 set -g message-command-style "fg=white,bg=colour236"
