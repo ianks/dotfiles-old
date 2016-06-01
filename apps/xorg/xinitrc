@@ -17,5 +17,3 @@ start_apps() {
 source_xinitrc_local
 setup_i3
 start_apps
-
-exec i3

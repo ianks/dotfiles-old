@@ -1,4 +1,5 @@
 require 'rake'
+require 'pathname'
 require 'fileutils'
 require File.join(File.dirname(__FILE__), 'bin', 'yadr', 'plug')
 
@@ -61,12 +62,19 @@ task :install => [:submodule_init, :submodules] do
       )
     end
 
-    if want_to_install? 'qutebrowser: vim-like browser'
-      FileUtils.mkdir_p File.join(ENV['HOME'], '.config', 'termite')
-      FileUtils.ln_sf(
-        File.join(ENV['HOME'], '.yadr', 'apps', 'qutebrowser'),
-        File.join(ENV['HOME'], '.config', 'qutebrowser')
-      )
+    if want_to_install? 'systemd user services'
+      FileUtils.mkdir_p File.join(ENV['HOME'], '.config', 'systemd', 'user')
+      services = Dir[File.join(ENV['HOME'], '.yadr', 'systemd', 'user', '*')]
+
+      services.each do |service|
+        src = Pathname.new(service)
+        dest = File.join ENV['HOME'], '.config', 'systemd', 'user', src.basename
+
+        FileUtils.rm(dest) if File.exist?(dest)
+        FileUtils.cp(src, dest)
+
+        system "systemctl --user enable #{src.basename} --now"
+      end
     end
 
     file_operation(Dir.glob('apps/i3')) if want_to_install?('i3 window manager configuration')
@@ -118,7 +126,6 @@ task :submodules do
     run %{
       cd $HOME/.yadr
       git submodule update --recursive
-      git clean -df
     }
     puts
   end

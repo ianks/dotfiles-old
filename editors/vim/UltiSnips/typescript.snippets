@@ -19,3 +19,52 @@ endsnippet
 snippet ct "console.table"
 console.table(${1:something});
 endsnippet
+
+snippet const "const"
+const ${1} = ${0}
+endsnippet
+
+snippet let "let"
+let ${1} = ${0};
+endsnippet
+
+snippet im "import"
+import ${1} from '${0}';
+endsnippet
+
+snippet cla "class"
+class ${1} {
+	${0}
+}
+endsnippet
+
+
+snippet clax " class ... extends ..."
+class ${1} extends ${2} {
+	${0}
+}
+endsnippet
+
+snippet => "arrow function"
+(${1}) => {
+	${0}
+}
+endsnippet
+
+snippet af "arrow function"
+(${1}) => {
+	${0}
+}
+endsnippet
+
+snippet sym "Symbol"
+const ${1} = Symbol('${0}');
+endsnippet
+
+snippet ed "export default"
+export default ${0}
+endsnippet
+
+snippet ${ "string interpolation"
+${${1}}${0}
+endsnippet

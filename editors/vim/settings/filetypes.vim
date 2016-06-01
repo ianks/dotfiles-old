@@ -1,2 +1,2 @@
 au BufNewFile,BufRead *.plug set filetype=vim
-au BufNewFile,BufRead *.{jscs,jshint,eslint}rc set filetype=json
+au BufNewFile,BufRead *.{jscs,jshint,eslint,tslint}rc set filetype=json
