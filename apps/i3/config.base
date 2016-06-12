@@ -19,7 +19,7 @@ bindsym $mod+b exec --no-startup-id chromium --disable-gpu
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -b -p 'Arch Linux' -fn 'Open Sans:pixelsize=15' -nb '#3c3836' -nf '#d79921' -sf '#fdf6e3' -sb '#98971a'"
 
 # change focus
 bindsym $mod+h focus left
