@@ -61,6 +61,7 @@
 	summary = true
 	verbosity = 1
 	tool = vimdiff
+	conflictstyle = diff3
 
 [apply]
 	whitespace = nowarn
