@@ -13,7 +13,7 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id termite -e zsh
 
 # start a browser
-bindsym $mod+b exec --no-startup-id chromium --disable-gpu
+bindsym $mod+b exec --no-startup-id chromium
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -157,7 +157,7 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 
 # Bluetooth
-exec --no-startup-id /usr/bin/blueman-manager
+exec --no-startup-id sleep 60 && /usr/bin/blueman-manager
 
 # Wallpaper
 exec --no-startup-id nitrogen --restore
