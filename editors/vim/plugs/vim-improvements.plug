@@ -33,7 +33,7 @@ Plug 'bruno-/vim-man'
 Plug 'osyo-manga/unite-quickfix'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
-Plug 'radenling/vim-dispatch-neovim'
+" Plug 'radenling/vim-dispatch-neovim'
 Plug 'kassio/neoterm'
 Plug 'tpope/vim-jdaddy'
 Plug 'mhinz/vim-startify'

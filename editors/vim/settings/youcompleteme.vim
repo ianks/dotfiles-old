@@ -16,3 +16,7 @@ let g:ycm_filetype_specific_completion_to_disable = {
       \ 'markdown': 1,
       \ 'liquid': 1
       \}
+
+let g:ycm_semantic_triggers = {
+     \ 'elm' : ['.'],
+     \}

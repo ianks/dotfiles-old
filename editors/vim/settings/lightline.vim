@@ -2,13 +2,17 @@ let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo', 'syntastic' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ],
       \ },
       \ 'component_function': {
       \   'fugitive': 'MyFugitive',
       \   'readonly': 'MyReadonly',
       \   'filename': 'MyFilename',
       \   'modified': 'MyModified',
+      \   'syntastic': 'SyntasticStatuslineFlag',
       \ },
       \ 'separator': { 'right': '', 'left': '' },
       \ 'subseparator': { 'right': '', 'left': '' }
