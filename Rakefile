@@ -18,6 +18,7 @@ task :install => [:submodule_init, :submodules] do
 
   # this has all the runcoms from this directory.
   file_operation(Dir.glob('cli/git/*')) if want_to_install?('git configs (color, aliases)')
+  file_operation(Dir.glob('cli/other/*')) if want_to_install?('other things')
   file_operation(Dir.glob('cli/ag/*')) if want_to_install?('ag configs (sane ag options for searching)')
   file_operation(Dir.glob('langs/ruby/*')) if want_to_install?('rubygems config (faster/no docs), pry config')
   file_operation(Dir.glob('langs/python/*')) if want_to_install?('pylint etc.')
