@@ -90,8 +90,8 @@ alias x='startx'
 
 alias c='ccat'
 
-alias v='/usr/bin/nvim'
+alias v='nvim'
 alias tailstaging='ssh deploy@staging.adhawk-api.com -C "tail -f ~/adhawk/shared/log/staging.log"'
 alias taildashboard='ssh dashboard -C "tail -f /var/log/nginx/error.log"'
 alias mailinglist='ssh ah-mailing-list -C "cat /tmp/mailing_list.yml"'
-alias stupidwordpress='ssh ah-blog -C "sudo reboot"'
+alias sysd='systemctl'

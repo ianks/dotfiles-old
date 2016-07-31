@@ -22,6 +22,10 @@
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	snapshots = !git stash list --grep snapshot
 
+	# via http://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged
+	delete-merged = !git branch --merged | grep -v '^* master$' | grep -v '^  master$' | xargs git branch -d
+
+
 	#via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
 	recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 

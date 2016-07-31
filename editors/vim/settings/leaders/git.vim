@@ -2,7 +2,7 @@
 " <leader>g
 " Git mappings
 
-nnoremap <leader>ga   :Git add %:p<CR><CR>
+nnoremap <leader>ga   :Gwrite<CR>
 nnoremap <leader>gb   :Git branch<space>
 nnoremap <leader>gB   :Gblame<CR>
 nnoremap <leader>gbr  :Gbrowse

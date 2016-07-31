@@ -65,11 +65,18 @@ snippet ed "export default"
 export default ${0}
 endsnippet
 
-snippet rr "export default"
+snippet rr "react-redux"
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 endsnippet
 
 snippet ${ "string interpolation"
 ${${1}}${0}
+endsnippet
+
+snippet rcons "React constructor"
+constructor(props: Props, context: {}) {
+  super(props, context);
+  this.state = ${1}
+}
 endsnippet
