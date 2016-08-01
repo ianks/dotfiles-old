@@ -137,10 +137,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up 8 && pkill -
 bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down 8 && pkill -RTMIN+2 i3blocks
 bindsym XF86AudioMute exec pulseaudio-ctl mute && killall -SIGUSR1 i3status
 
-# Printscreen saves screenshot (with shift only focused window)
-bindsym --release Print exec --no-startup-id deepin-screenshot --save-path=$HOME/Dropbox/Pictures
-bindsym --release Shift+Print exec --no-startup-id scrot -u
-
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
@@ -155,9 +151,6 @@ client.urgent           #fb4934 #fb4934 #ebdbb2 #fb4934
 
 # Compositor
 exec --no-startup-id compton --config ~/.config/compton.conf
-
-# Audio
-exec --no-startup-id start-pulseaudio-x11
 
 # Notifications
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
