@@ -1,0 +1,14 @@
+[Unit]
+Description=the-power
+Requires=slingshot.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ianks/Dropbox/Development/work/techstars/companies/adhawk/the-power
+ExecStart=/usr/bin/bash -lc 'npm run sledge'
+TimeoutSec=30
+RestartSec=15s
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

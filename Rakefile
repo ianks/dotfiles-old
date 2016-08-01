@@ -74,7 +74,7 @@ task :install => [:submodule_init, :submodules] do
         FileUtils.rm(dest) if File.exist?(dest)
         FileUtils.cp(src, dest)
 
-        system "systemctl --user enable #{src.basename} --now"
+        system "systemctl --user daemon-reload"
       end
     end
 

@@ -1,0 +1,13 @@
+[Unit]
+Description=Slingshot
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ianks/Dropbox/Development/work/techstars/companies/adhawk/slingshot
+ExecStart=/usr/bin/bash -lc 'bundle exec rails server --bind 0.0.0.0'
+TimeoutSec=30
+RestartSec=15s
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
